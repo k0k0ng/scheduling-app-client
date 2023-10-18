@@ -6,8 +6,8 @@ import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 
 export default function TopNav() {
   return (
-    <nav className="flex min-h-[75px] w-full flex-row items-center justify-between border px-20">
-      <div>Overview</div>
+    <nav className="ml-64 flex min-h-[75px] w-full flex-row items-center justify-between border px-20">
+      <p>Overview</p>
       <div className="flex flex-row gap-x-4">
         <button type="button">
           <NotificationsNoneIcon />

@@ -1,136 +1,265 @@
 "use client";
 
 import { useState } from "react";
+import React from "react";
+
 import Image from "next/image";
 
+// toggle icon
+import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
 // dashboardicon
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-// inbox icon
-import InboxOutlinedIcon from "@mui/icons-material/InboxOutlined";
-// toggle icon
-import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
+// task manager icon
+import EditNoteOutlinedIcon from "@mui/icons-material/EditNoteOutlined";
+// analytics icon
+import ShowChartOutlinedIcon from "@mui/icons-material/ShowChartOutlined";
+// need help icon
+import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 
 // reusable
 import DropDown from "./DropDown/DropDown";
 
 export default function SideBar() {
   const [sidebarOpen, sidebarsetOpen] = useState(true);
+  const [sidebarLock, sidebarsetLock] = useState(true);
+
+  function MouseOver() {
+    sidebarsetOpen(true);
+  }
+
+  function MouseOut() {
+    if (sidebarLock) {
+      sidebarsetOpen(true);
+    } else {
+      sidebarsetOpen(false);
+    }
+  }
 
   return (
-    <aside
-      className={`fixed left-0 top-0 z-40 ${
-        sidebarOpen ? "w-64" : "w-20"
-      } h-screen -translate-x-full transition-transform sm:translate-x-0`}
-    >
-      <div className="-auto h-full border-r border-gray-200 bg-white  dark:border-gray-700 dark:bg-gray-800">
-        <div className="bg-gray-700">
-          <div className="ml-3 px-3 py-5">
-            <a href="/#" className="flex items-center">
-              <Image
-                src="/logo.png  "
-                className={` ${
-                  !sidebarOpen && "rotate-[360deg]"
-                } mr-3 h-6 duration-500 sm:h-7`}
-                alt="Logoipsum"
-                width={30}
-                height={35}
-              />
-              <span
-                className={`self center whitespace-nowrap text-xl font-semibold dark:text-white ${
-                  !sidebarOpen && "scale-0"
-                }`}
+    <>
+      <aside
+        className={`fixed left-0 top-0 z-40 ${
+          sidebarOpen ? "w-64" : "w-20"
+        } h-screen -translate-x-full transition-transform sm:translate-x-0`}
+        onMouseOver={MouseOver}
+        onMouseOut={MouseOut}
+      >
+        <div className="m-auto h-full border-r dark:border-[#5C5F65] dark:bg-[#202020]">
+          <div className="m-auto border-b dark:border-[#5C5F65] dark:bg-[#2C2C2C]">
+            <div className="ml-3 flex items-center justify-between px-3 py-4">
+              <a href="/#" className="flex items-center">
+                <Image
+                  src="/logo.png  "
+                  className={` ${
+                    !sidebarOpen && "rotate-[360deg]"
+                  } mr-3 h-6 duration-500 sm:h-7`}
+                  alt="Logoipsum"
+                  width={30}
+                  height={35}
+                />
+                <span
+                  className={`self center whitespace-nowrap text-xl font-bold text-gray-300 ${
+                    !sidebarOpen && "scale-0"
+                  }`}
+                >
+                  Logoipsum
+                </span>{" "}
+              </a>
+              {/* toggle */}
+              <button
+                type="button"
+                className="group flex items-center"
+                onClick={() => {
+                  sidebarsetLock(!sidebarLock);
+                }}
               >
-                Logoipsum
-              </span>
-            </a>
-          </div>
-        </div>
-
-        {/* sidebar components */}
-        <div className="px-2 py-5">
-          {/* title */}
-          <p
-            className={`ml-5 text-xs text-gray-300 ${
-              !sidebarOpen && "scale-0"
-            }`}
-          >
-            MAIN
-          </p>
-          <div>
-            <a
-              href="/#"
-              className="group flex w-full items-center rounded-lg p-3 text-base font-normal text-gray-900 hover:bg-purple-100 dark:text-white dark:hover:bg-purple-700"
-            >
-              <HomeOutlinedIcon className="ml-2" />
-              <span
-                className={`ml-3 self-center whitespace-nowrap text-sm font-medium ${
-                  !sidebarOpen && "scale-0"
-                }`}
-              >
-                Dashboard
-              </span>
-            </a>
+                {/* toggle */}
+                <MoreVertOutlinedIcon
+                  className={`${!sidebarOpen && "scale-0"}`}
+                />
+              </button>
+            </div>
           </div>
 
-          {/* Scheduler dropdown */}
-          <div>
-            <DropDown
-              title="Publishing"
-              lists={["Scheduler"]}
-              sidebarOpen={sidebarOpen}
-            />
-          </div>
-
-          <div className="pt-5">
+          {/* sidebar components */}
+          <div className="h-4/6 overflow-y-auto px-2 py-5">
             {/* title */}
             <p
               className={`ml-5 text-xs text-gray-300 ${
-                !sidebarOpen && "scale-0"
+                !sidebarOpen && "hidden scale-0"
               }`}
             >
-              SETTINGS
+              MAIN
             </p>
-            <a
-              href="/#"
-              className="group flex w-full items-center rounded-lg p-3 text-base font-normal text-gray-900 hover:bg-purple-100 dark:text-white dark:hover:bg-purple-700"
-            >
-              <InboxOutlinedIcon className="ml-2 cursor-pointer duration-500" />
-              <span
-                className={`ml-3 self-center whitespace-nowrap text-sm font-medium ${
-                  !sidebarOpen && "scale-0"
-                }`}
+            <div>
+              <a
+                href="/dashboard"
+                className="group flex w-full items-center rounded-lg p-3 text-base font-normal text-gray-900 hover:bg-purple-100 dark:text-white dark:hover:bg-purple-700"
               >
-                Inbox
-              </span>
-            </a>
-          </div>
-
-          {/* settings dropdown */}
-          <div>
-            <DropDown
-              title="Settings"
-              lists={["Account Profile", "Subscription", "Invoices"]}
-              sidebarOpen={sidebarOpen}
-            />
-          </div>
-
-          <ul className="mt-2">
-            <li>
+                <HomeOutlinedIcon className="ml-2" />
+                <span
+                  className={`ml-3 self-center whitespace-nowrap text-sm font-medium ${
+                    !sidebarOpen && "scale-0"
+                  }`}
+                >
+                  Overview
+                </span>
+              </a>
+            </div>
+            {/* Publishing  */}
+            <div>
+              <DropDown
+                linkTitle="publish"
+                title="Publishing"
+                lists={["Scheduler", "Content Pool", "Discover", "Stream"]}
+                sidebarOpen={sidebarOpen}
+              />
+            </div>
+            {/* Tools */}
+            <div>
+              <DropDown
+                linkTitle="tools"
+                title="Tools"
+                lists={[
+                  "Chat AI",
+                  "AI Text to Image",
+                  "AI Video Generator",
+                  "Discover",
+                  "Hashtag Manager",
+                  "Stock Library",
+                  "Caption Templates",
+                  "Quick Replies",
+                  "Landing Page",
+                ]}
+                sidebarOpen={sidebarOpen}
+              />
+            </div>
+            {/* Monitoring  */}
+            <div>
+              <DropDown
+                linkTitle="monitoring"
+                title="Monitoring"
+                lists={["Post Replies", "Stream"]}
+                sidebarOpen={sidebarOpen}
+              />
+            </div>
+            {/* Organize  */}
+            <div>
+              <DropDown
+                linkTitle="organize"
+                title="Organize"
+                lists={["Categories", "Labels"]}
+                sidebarOpen={sidebarOpen}
+              />
+            </div>
+            {/* task manager */}
+            <div>
               <a
                 href="/#"
-                className="group flex items-center rounded-lg p-3 text-base font-normal text-gray-900 hover:bg-purple-100 dark:text-white dark:hover:bg-purple-700"
-                onClick={() => sidebarsetOpen(!sidebarOpen)}
+                className="group flex w-full items-center rounded-lg p-3 text-base font-normal text-gray-900 hover:bg-purple-100 dark:text-white dark:hover:bg-purple-700"
               >
-                <LogoutOutlinedIcon
-                  className={`ml-2 cursor-pointer duration-300 ${
-                    sidebarOpen && "rotate-[180deg]"
+                <EditNoteOutlinedIcon className="ml-2" />
+                <span
+                  className={`ml-3 self-center whitespace-nowrap text-sm font-medium ${
+                    !sidebarOpen && "scale-0"
                   }`}
-                />
+                >
+                  Task Manager
+                </span>
               </a>
-            </li>
-          </ul>
+            </div>
+            {/* domain and urls dropdown */}
+            <div>
+              <DropDown
+                linkTitle="domainurl"
+                title="Domains and URLs"
+                lists={["Custom Domains", "URL Shortener"]}
+                sidebarOpen={sidebarOpen}
+              />
+            </div>
+            {/* analytics */}
+            <div>
+              <a
+                href="/#"
+                className="group flex w-full items-center rounded-lg p-3 text-base font-normal text-gray-900 hover:bg-purple-100 dark:text-white dark:hover:bg-purple-700"
+              >
+                <ShowChartOutlinedIcon className="ml-2" />
+                <span
+                  className={`ml-3 self-center whitespace-nowrap text-sm font-medium ${
+                    !sidebarOpen && "scale-0"
+                  }`}
+                >
+                  Analytics
+                </span>
+              </a>
+            </div>
+            {/* billing dropdown */}
+            <div>
+              <DropDown
+                linkTitle="billing"
+                title="Billing"
+                lists={["Subscription", "Invoices", "Affiliates"]}
+                sidebarOpen={sidebarOpen}
+              />
+            </div>
+            {/* settings */}
+            <div>
+              <DropDown
+                linkTitle="settings"
+                title="Settings"
+                lists={[
+                  "General",
+                  "Channels",
+                  "Integrations",
+                  "Password Manager",
+                ]}
+                sidebarOpen={sidebarOpen}
+              />
+            </div>
+            {/*   My Profile */}
+            <div>
+              <DropDown
+                linkTitle="profile"
+                title="My Profile"
+                lists={[
+                  "Account",
+                  "Preferences",
+                  "Change Password",
+                  "Notifications",
+                  "Terms and Conditions",
+                ]}
+                sidebarOpen={sidebarOpen}
+              />
+            </div>
+            {/* need help? */}
+            <div>
+              <a
+                href="/#"
+                className="group flex w-full items-center rounded-lg p-3 text-base font-normal text-gray-900 hover:bg-purple-100 dark:text-white dark:hover:bg-purple-700"
+              >
+                <HelpOutlineOutlinedIcon className="ml-2" />
+                <span
+                  className={`ml-3 self-center whitespace-nowrap text-sm font-medium ${
+                    !sidebarOpen && "scale-0"
+                  }`}
+                >
+                  Need Help?
+                </span>
+              </a>
+            </div>
+          </div>
         </div>
+      </aside>
+
+      <div
+        className={` ${
+          sidebarOpen ? `sm:ml-64` : `sm:ml-20`
+        } relative h-screen`}
+      >
+        <section className="min-h-screen bg-gray-50 dark:bg-gray-900">
+          <div className="">{/* <p>content</p> */}</div>
+        </section>
       </div>
-    </aside>
+    </>
   );
 }

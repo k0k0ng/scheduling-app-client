@@ -1,12 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import React from "react";
 
 import Image from "next/image";
 
 // toggle icon
-import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
+import CodeOutlinedIcon from "@mui/icons-material/CodeOutlined";
 // dashboardicon
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 // task manager icon
@@ -15,38 +14,27 @@ import EditNoteOutlinedIcon from "@mui/icons-material/EditNoteOutlined";
 import ShowChartOutlinedIcon from "@mui/icons-material/ShowChartOutlined";
 // need help icon
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
+// light and dark
+import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 
 // reusable
 import DropDown from "./DropDown/DropDown";
 
 export default function SideBar() {
   const [sidebarOpen, sidebarsetOpen] = useState(true);
-  const [sidebarLock, sidebarsetLock] = useState(true);
-
-  function MouseOver() {
-    sidebarsetOpen(true);
-  }
-
-  function MouseOut() {
-    if (sidebarLock) {
-      sidebarsetOpen(true);
-    } else {
-      sidebarsetOpen(false);
-    }
-  }
 
   return (
     <>
       <aside
-        className={`fixed left-0 top-0 z-40 ${
+        className={`fixed left-0 top-0 z-20 ${
           sidebarOpen ? "w-64" : "w-20"
         } h-screen -translate-x-full transition-transform sm:translate-x-0`}
-        onMouseOver={MouseOver}
-        onMouseOut={MouseOut}
       >
-        <div className="m-auto h-full border-r dark:border-[#5C5F65] dark:bg-[#202020]">
-          <div className="m-auto border-b dark:border-[#5C5F65] dark:bg-[#2C2C2C]">
-            <div className="ml-3 flex items-center justify-between px-3 py-4">
+        <div className="relative m-auto h-full border-r dark:border-[#5C5F65] dark:bg-[#202020]">
+          {/* sidebar logo and title */}
+          <div className="relative border-b dark:border-[#5C5F65] dark:bg-[#2C2C2C]">
+            <div className="ml-3 justify-between px-3 py-4">
               <a href="/#" className="flex items-center">
                 <Image
                   src="/logo.png  "
@@ -58,31 +46,33 @@ export default function SideBar() {
                   height={35}
                 />
                 <span
-                  className={`self center whitespace-nowrap text-xl font-bold text-gray-300 ${
-                    !sidebarOpen && "scale-0"
+                  className={`text-xl font-bold text-gray-300 ${
+                    !sidebarOpen && "hidden scale-0"
                   }`}
                 >
                   Logoipsum
                 </span>{" "}
               </a>
               {/* toggle */}
-              <button
-                type="button"
-                className="group flex items-center"
-                onClick={() => {
-                  sidebarsetLock(!sidebarLock);
-                }}
-              >
-                {/* toggle */}
-                <MoreVertOutlinedIcon
-                  className={`${!sidebarOpen && "scale-0"}`}
-                />
-              </button>
+              <div className="absolute -bottom-10 -right-4 h-14 w-auto">
+                <div
+                  className="rounded-mg cursor-pointer rounded-lg border border-solid border-[#5C5F65] bg-[#161A23] p-1.5"
+                  onClick={() => {
+                    sidebarsetOpen(!sidebarOpen);
+                  }}
+                >
+                  <CodeOutlinedIcon
+                    fontSize="small"
+                    color="secondary"
+                  ></CodeOutlinedIcon>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* sidebar components */}
-          <div className="h-4/6 overflow-y-auto px-2 py-5">
+          {/*  */}
+          <div className="h-4/5 overflow-y-auto px-2 py-5">
             {/* title */}
             <p
               className={`ml-5 text-xs text-gray-300 ${
@@ -94,18 +84,17 @@ export default function SideBar() {
             <div>
               <a
                 href="/dashboard"
-                className="group flex w-full items-center rounded-lg p-3 text-base font-normal text-gray-900 hover:bg-purple-100 dark:text-white dark:hover:bg-purple-700"
+                className="group flex w-full items-center rounded-lg p-3 text-sm font-medium text-gray-300 hover:bg-purple-100 dark:hover:bg-purple-700 dark:hover:text-white"
               >
                 <HomeOutlinedIcon className="ml-2" />
                 <span
-                  className={`ml-3 self-center whitespace-nowrap text-sm font-medium ${
-                    !sidebarOpen && "scale-0"
-                  }`}
+                  className={`ml-3 self-center ${!sidebarOpen && "scale-0"}`}
                 >
-                  Overview
+                  Dashboard
                 </span>
               </a>
             </div>
+
             {/* Publishing  */}
             <div>
               <DropDown
@@ -156,13 +145,11 @@ export default function SideBar() {
             <div>
               <a
                 href="/#"
-                className="group flex w-full items-center rounded-lg p-3 text-base font-normal text-gray-900 hover:bg-purple-100 dark:text-white dark:hover:bg-purple-700"
+                className="group flex w-full items-center rounded-lg p-3 text-sm font-medium text-gray-300 hover:bg-purple-100 dark:hover:bg-purple-700 dark:hover:text-white"
               >
                 <EditNoteOutlinedIcon className="ml-2" />
                 <span
-                  className={`ml-3 self-center whitespace-nowrap text-sm font-medium ${
-                    !sidebarOpen && "scale-0"
-                  }`}
+                  className={`ml-3 self-center ${!sidebarOpen && "scale-0"}`}
                 >
                   Task Manager
                 </span>
@@ -181,13 +168,11 @@ export default function SideBar() {
             <div>
               <a
                 href="/#"
-                className="group flex w-full items-center rounded-lg p-3 text-base font-normal text-gray-900 hover:bg-purple-100 dark:text-white dark:hover:bg-purple-700"
+                className="group flex w-full items-center rounded-lg p-3 text-sm font-medium text-gray-300 hover:bg-purple-100 dark:hover:bg-purple-700 dark:hover:text-white"
               >
                 <ShowChartOutlinedIcon className="ml-2" />
                 <span
-                  className={`ml-3 self-center whitespace-nowrap text-sm font-medium ${
-                    !sidebarOpen && "scale-0"
-                  }`}
+                  className={`ml-3 self-center  ${!sidebarOpen && "scale-0"}`}
                 >
                   Analytics
                 </span>
@@ -235,29 +220,65 @@ export default function SideBar() {
             <div>
               <a
                 href="/#"
-                className="group flex w-full items-center rounded-lg p-3 text-base font-normal text-gray-900 hover:bg-purple-100 dark:text-white dark:hover:bg-purple-700"
+                className="group flex w-full items-center rounded-lg p-3 text-sm font-medium text-gray-300 hover:bg-purple-100 dark:hover:bg-purple-700 dark:hover:text-white"
               >
                 <HelpOutlineOutlinedIcon className="ml-2" />
                 <span
-                  className={`ml-3 self-center whitespace-nowrap text-sm font-medium ${
-                    !sidebarOpen && "scale-0"
-                  }`}
+                  className={`ml-3 self-center  ${!sidebarOpen && "scale-0"}`}
                 >
                   Need Help?
                 </span>
               </a>
             </div>
+            {/* sidebar components div end */}
           </div>
+
+          {/* absolute bottom position light&dark */}
+          <div className="absolute bottom-0 h-20 w-full bg-[#2D2F39]">
+            <div
+              className={`${
+                sidebarOpen ? "mx-8" : "mx-2"
+              } mx-8 my-4 flex  rounded-md bg-[#202020] p-2`}
+            >
+              <button
+                type="button"
+                className={`${
+                  !sidebarOpen && "hidden scale-0"
+                } w-full items-center rounded-lg p-2 text-sm font-medium text-gray-500 hover:bg-purple-100 dark:hover:bg-purple-700  dark:hover:text-white`}
+              >
+                <LightModeOutlinedIcon fontSize="small" color="secondary" />
+                <span className="ml-3 self-center">Light</span>
+              </button>
+              <button
+                type="button"
+                className="w-full items-center rounded-lg p-2 text-sm font-medium text-gray-500 hover:bg-purple-100 dark:hover:bg-purple-700  dark:hover:text-white"
+              >
+                <DarkModeOutlinedIcon fontSize="small" color="primary" />
+                <span
+                  className={`ml-3 self-center  ${
+                    !sidebarOpen && "hidden scale-0"
+                  }`}
+                >
+                  Dark
+                </span>
+              </button>
+            </div>
+            {/* absolute end div */}
+          </div>
+          {/* relative end div */}
         </div>
+        {/* aside end  */}
       </aside>
 
       <div
         className={` ${
-          sidebarOpen ? `sm:ml-64` : `sm:ml-20`
+          sidebarOpen ? "sm:ml-64" : "sm:ml-20"
         } relative h-screen`}
       >
         <section className="min-h-screen bg-gray-50 dark:bg-gray-900">
-          <div className="">{/* <p>content</p> */}</div>
+          <div className="ml-3 self-center text-sm font-medium">
+            <p>content</p>
+          </div>
         </section>
       </div>
     </>

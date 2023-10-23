@@ -106,7 +106,7 @@ const DomainAndUrlListIcon = [
 ];
 
 const BillingListIcon = [
-  <DomainVerificationOutlinedIcon className={iconclassName} />,
+  <SubscriptionsOutlinedIcon className={iconclassName} />,
   <DescriptionOutlinedIcon className={iconclassName} />,
   <Diversity3OutlinedIcon className={iconclassName} />,
 ];
@@ -126,50 +126,54 @@ const ProfileListIcon = [
   <EditNoteOutlinedIcon className={iconclassName} />,
 ];
 
-function IconTitleManager({ linkTitle }: { linkTitle: string }) {
+function IconTitleManager({ linkTitle }: any) {
   if (linkTitle === "publish") {
     return <CalendarTodayOutlinedIcon className={icontitleclassName} />;
-  } else if (linkTitle === "tools") {
-    return <PlayCircleOutlinedIcon className={icontitleclassName} />;
-  } else if (linkTitle === "monitoring") {
-    return <InsertChartOutlinedTwoToneIcon className={icontitleclassName} />;
-  } else if (linkTitle === "organize") {
-    return <AccountTreeOutlinedIcon className={icontitleclassName} />;
-  } else if (linkTitle === "domainurl") {
-    return <LanguageOutlinedIcon className={icontitleclassName} />;
-  } else if (linkTitle === "billing") {
-    return <AttachMoneyOutlinedIcon className={icontitleclassName} />;
-  } else if (linkTitle === "settings") {
-    return <SettingsOutlinedIcon className={icontitleclassName} />;
-  } else {
-    return <AccountCircleOutlinedIcon className={icontitleclassName} />;
   }
+  if (linkTitle === "tools") {
+    return <PlayCircleOutlinedIcon className={icontitleclassName} />;
+  }
+  if (linkTitle === "monitoring") {
+    return <InsertChartOutlinedTwoToneIcon className={icontitleclassName} />;
+  }
+  if (linkTitle === "organize") {
+    return <AccountTreeOutlinedIcon className={icontitleclassName} />;
+  }
+  if (linkTitle === "domainurl") {
+    return <LanguageOutlinedIcon className={icontitleclassName} />;
+  }
+  if (linkTitle === "billing") {
+    return <AttachMoneyOutlinedIcon className={icontitleclassName} />;
+  }
+  if (linkTitle === "settings") {
+    return <SettingsOutlinedIcon className={icontitleclassName} />;
+  }
+  return <AccountCircleOutlinedIcon className={icontitleclassName} />;
 }
 
-function IconListManager({
-  linkTitle,
-  index,
-}: {
-  linkTitle: string;
-  index: number;
-}) {
+function IconListManager({ linkTitle, index }: any) {
   if (linkTitle === "publish") {
     return PublishingListIcon[index];
-  } else if (linkTitle === "tools") {
-    return ToolsListIcon[index];
-  } else if (linkTitle === "monitoring") {
-    return MonitoringListIcon[index];
-  } else if (linkTitle === "organize") {
-    return OrganizeListIcon[index];
-  } else if (linkTitle === "domainurl") {
-    return DomainAndUrlListIcon[index];
-  } else if (linkTitle === "billing") {
-    return BillingListIcon[index];
-  } else if (linkTitle === "settings") {
-    return SettingListIcon[index];
-  } else {
-    return ProfileListIcon[index];
   }
+  if (linkTitle === "tools") {
+    return ToolsListIcon[index];
+  }
+  if (linkTitle === "monitoring") {
+    return MonitoringListIcon[index];
+  }
+  if (linkTitle === "organize") {
+    return OrganizeListIcon[index];
+  }
+  if (linkTitle === "domainurl") {
+    return DomainAndUrlListIcon[index];
+  }
+  if (linkTitle === "billing") {
+    return BillingListIcon[index];
+  }
+  if (linkTitle === "settings") {
+    return SettingListIcon[index];
+  }
+  return ProfileListIcon[index];
 }
 
 export default function DropDown({
@@ -178,16 +182,16 @@ export default function DropDown({
   lists,
   sidebarOpen,
 }: {
-  linkTitle: string;
-  title: string;
-  lists: string[];
-  sidebarOpen: boolean;
+  linkTitle: any;
+  title: any;
+  lists: any[];
+  sidebarOpen: any;
 }) {
   return (
-    <details>
-      <summary className="group flex w-full items-center rounded-lg p-3 text-base font-normal text-gray-900 hover:bg-purple-100 dark:text-white dark:hover:bg-purple-700">
+    <details id={linkTitle}>
+      <summary className="group flex w-full items-center rounded-lg p-3 text-base font-normal text-gray-300 hover:bg-purple-100 dark:hover:bg-purple-700 dark:hover:text-white">
         <IconTitleManager linkTitle={linkTitle} />
-        <span className="ml-3 flex-1 whitespace-nowrap text-left text-sm font-medium">
+        <span className="ml-3 flex-1 text-left text-sm font-medium">
           {sidebarOpen && title}
         </span>
         {sidebarOpen && <KeyboardArrowDownOutlinedIcon />}
@@ -199,7 +203,7 @@ export default function DropDown({
               <a
                 className={`${
                   sidebarOpen ? "ml-8 p-2" : "hidden scale-0"
-                }group flex items-center rounded-lg p-2 text-sm font-normal text-gray-900 hover:bg-purple-100 dark:text-white dark:hover:bg-purple-700`}
+                }group flex items-center rounded-lg p-2 text-sm font-medium text-gray-300 hover:bg-purple-100 dark:hover:bg-purple-700 dark:hover:text-white`}
                 href={`/#${list}`}
               >
                 <IconListManager linkTitle={linkTitle} index={index} />

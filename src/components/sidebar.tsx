@@ -1,11 +1,10 @@
 "use client";
 
-import { useState, Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from "react";
 
 import Image from "next/image";
 
 // reusable
-import DropDown from "./DropDown/DropDown";
 
 // dashboardicon
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
@@ -13,6 +12,7 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import InboxOutlinedIcon from "@mui/icons-material/InboxOutlined";
 // toggle icon
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
+import DropDown from "./DropDown/DropDown";
 
 type SidebarState = {
   sidebarIsOpen: boolean;
@@ -23,8 +23,6 @@ export default function SideBar({
   sidebarIsOpen,
   setSidebarIsOpen,
 }: SidebarState) {
-  const [sidebarOpen, sidebarsetOpen] = useState(true);
-
   return (
     <aside
       className={`fixed left-0 top-0 z-40 ${
@@ -126,6 +124,7 @@ export default function SideBar({
           <ul className="mt-2">
             <li>
               <button
+                type="button"
                 className="group flex items-center rounded-lg p-3 text-base font-normal text-gray-900 hover:bg-purple-100 dark:text-white dark:hover:bg-purple-700"
                 onClick={() => setSidebarIsOpen(!sidebarIsOpen)}
               >

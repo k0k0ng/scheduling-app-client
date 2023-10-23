@@ -2,28 +2,12 @@
 
 import { useState } from "react";
 
-import SideBar from "@/components/SideBar";
+import SideBar from "@/components/Sidebar";
 import TopNav from "@/components/TopNav";
+import SearchIcon from "@mui/icons-material/Search";
 import TopCardButton from "./components/TopCardButton";
 
-import SearchIcon from "@mui/icons-material/Search";
-
-import FacebookIcon from "@mui/icons-material/Facebook";
 import AnalyticsOverview from "./components/AnalyticsOverview";
-
-const cardMenuImageList = [
-  "/svg/overview/connect-channel-icon.svg",
-  "/svg/overview/connect-channel-icon.svg",
-  "/svg/overview/connect-channel-icon.svg",
-  "/svg/overview/connect-channel-icon.svg",
-];
-
-const cardMenuTextList = [
-  "Connect A Channel",
-  "Create A Post",
-  "Invite A Teammate",
-  "Start Your Subscription",
-];
 
 export default function Dashboard() {
   const [sidebarStatus, setSidebarStatus] = useState(true);
@@ -55,7 +39,7 @@ export default function Dashboard() {
           sidebarStatus ? "ml-64" : "ml-20"
         } min-h-[100vh] w-full pb-28`}
       >
-        <TopNav sidebarIsOpen={sidebarStatus} />
+        <TopNav />
 
         <main className="mt-8 h-[100vh] min-w-[20rem] pl-10 pr-20">
           <div className="flex min-h-[45px] w-full flex-row justify-end">
@@ -80,26 +64,26 @@ export default function Dashboard() {
             }  gap-8 xl:grid-cols-4`}
           >
             <TopCardButton
-              cardImage={"/svg/dashboard/connect-channel-icon.svg"}
-              cardText={"Connect A Channel"}
+              cardImage="/svg/dashboard/connect-channel-icon.svg"
+              cardText="Connect A Channel"
               cardAction={handleConnectChannel}
             />
 
             <TopCardButton
-              cardImage={"/svg/dashboard/connect-channel-icon.svg"}
-              cardText={"Create A Post"}
+              cardImage="/svg/dashboard/connect-channel-icon.svg"
+              cardText="Create A Post"
               cardAction={handleCreatePost}
             />
 
             <TopCardButton
-              cardImage={"/svg/dashboard/connect-channel-icon.svg"}
-              cardText={"Invite A Teammate"}
+              cardImage="/svg/dashboard/connect-channel-icon.svg"
+              cardText="Invite A Teammate"
               cardAction={handleInviteTeammate}
             />
 
             <TopCardButton
-              cardImage={"/svg/dashboard/connect-channel-icon.svg"}
-              cardText={"Start Your Subscription"}
+              cardImage="/svg/dashboard/connect-channel-icon.svg"
+              cardText="Start Your Subscription"
               cardAction={handleStartYourSubscription}
             />
           </div>
@@ -110,9 +94,9 @@ export default function Dashboard() {
               <div className="mt-2 text-[12px]">
                 Summary of your active boards
               </div>
-              <div className="mt-4 min-h-[180px] w-full rounded bg-[#FFF]"></div>
-              <div className="mt-4 min-h-[180px] w-full rounded bg-[#FFF]"></div>
-              <div className="mt-4 min-h-[180px] w-full rounded bg-[#FFF]"></div>
+              <div className="mt-4 min-h-[180px] w-full rounded bg-[#FFF]" />
+              <div className="mt-4 min-h-[180px] w-full rounded bg-[#FFF]" />
+              <div className="mt-4 min-h-[180px] w-full rounded bg-[#FFF]" />
             </div>
 
             <AnalyticsOverview />

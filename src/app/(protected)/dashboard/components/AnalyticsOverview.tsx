@@ -11,8 +11,9 @@ export default function AnalyticsOverview() {
 
         <div className="flex flex-row items-center justify-evenly gap-1 rounded-[50px] bg-[#000] p-2">
           <button
+            type="button"
             className={`flex flex-row items-center gap-x-3 rounded-[25px] py-1 pl-2 pr-3 transition duration-300 hover:bg-[#7B46DE] ${
-              activeChannelCategory == "facebook" ? "bg-[#7B46DE]" : ""
+              activeChannelCategory === "facebook" ? "bg-[#7B46DE]" : ""
             }`}
             onClick={() => setActiveChannelCategory("facebook")}
           >
@@ -26,8 +27,9 @@ export default function AnalyticsOverview() {
           </button>
 
           <button
+            type="button"
             className={`flex flex-row items-center gap-x-3 rounded-[25px] py-1 pl-2 pr-3 transition duration-300 hover:bg-[#7B46DE] ${
-              activeChannelCategory == "instagram" ? "bg-[#7B46DE]" : ""
+              activeChannelCategory === "instagram" ? "bg-[#7B46DE]" : ""
             }`}
             onClick={() => setActiveChannelCategory("instagram")}
           >
@@ -41,8 +43,9 @@ export default function AnalyticsOverview() {
           </button>
 
           <button
+            type="button"
             className={`flex flex-row items-center gap-x-3 rounded-[25px] py-1 pl-2 pr-3 transition duration-300 hover:bg-[#7B46DE] ${
-              activeChannelCategory == "discord" ? "bg-[#7B46DE]" : ""
+              activeChannelCategory === "discord" ? "bg-[#7B46DE]" : ""
             }`}
             onClick={() => setActiveChannelCategory("discord")}
           >
@@ -56,8 +59,9 @@ export default function AnalyticsOverview() {
           </button>
 
           <button
+            type="button"
             className={`flex flex-row items-center gap-x-3 rounded-[25px] py-1 pl-2 pr-3 transition duration-300 hover:bg-[#7B46DE] ${
-              activeChannelCategory == "linkedin" ? "bg-[#7B46DE]" : ""
+              activeChannelCategory === "linkedin" ? "bg-[#7B46DE]" : ""
             }`}
             onClick={() => setActiveChannelCategory("linkedin")}
           >
@@ -72,10 +76,10 @@ export default function AnalyticsOverview() {
         </div>
       </div>
       <div className="mt-5 grid grid-cols-2 gap-5">
-        <div className="min-h-[210px] w-full rounded bg-[#FFF]"></div>
-        <div className="min-h-[210px] w-full rounded bg-[#FFF]"></div>
-        <div className="min-h-[210px] w-full rounded bg-[#FFF]"></div>
-        <div className="min-h-[210px] w-full rounded bg-[#FFF]"></div>
+        <div className="min-h-[210px] w-full rounded bg-[#FFF]" />
+        <div className="min-h-[210px] w-full rounded bg-[#FFF]" />
+        <div className="min-h-[210px] w-full rounded bg-[#FFF]" />
+        <div className="min-h-[210px] w-full rounded bg-[#FFF]" />
       </div>
     </div>
   );

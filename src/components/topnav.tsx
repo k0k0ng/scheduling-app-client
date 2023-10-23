@@ -1,18 +1,10 @@
-import React from "react";
-
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import CampaignIcon from "@mui/icons-material/Campaign";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 
-type SidebarState = {
-  sidebarIsOpen: boolean;
-};
-
-export default function TopNav({ sidebarIsOpen }: SidebarState) {
+export default function TopNav() {
   return (
-    <nav
-      className={` flex min-h-[75px] w-full flex-row items-center justify-between border-b-[1px] border-slate-700 pl-10 pr-20`}
-    >
+    <nav className=" flex min-h-[75px] w-full flex-row items-center justify-between border-b-[1px] border-slate-700 pl-10 pr-20">
       <p className="text-[18px] font-semibold ">Overview</p>
       <div className="flex flex-row gap-x-4">
         <button type="button">
@@ -34,7 +26,7 @@ export default function TopNav({ sidebarIsOpen }: SidebarState) {
           <span className="text-[12px]">Free Account</span>
         </div>
 
-        <button className="ml-2 flex items-center">
+        <button type="button" className="ml-2 flex items-center">
           <AccountCircleIcon className="h-[45px] w-[45px]" />
         </button>
       </div>

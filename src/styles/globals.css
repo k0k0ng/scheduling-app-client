@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,19 +8,6 @@ body {
   color: #fff;
   font-family: "Poppins";
   background: #121212;
-
-  p {
-    font-family: "Poppins";
-  }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: Poppins;
 }
 
 .search-form:focus-within,
@@ -28,9 +17,29 @@ h6 {
 
 input {
   color: #c0c0c0;
-  font-family: Poppins;
   font-size: 14px;
   background-color: transparent;
   border: none;
   outline: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

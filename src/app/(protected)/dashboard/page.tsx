@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import SideBar from "@/components/Sidebar";
+import SideBar from "@/components/SideBar";
 import TopNav from "@/components/TopNav";
 import SearchIcon from "@mui/icons-material/Search";
 import TopCardButton from "./components/TopCardButton";

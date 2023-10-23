@@ -1,11 +1,27 @@
-import TopNav from "@/components/topnav";
-import SideBar from "@/components/sidebar";
+"use client";
+
+import { useState } from "react";
+
+import TopNav from "@/components/TopNav";
+import SideBar from "@/components/SideBar";
 
 export default function Home() {
+  const [sidebarStatus, setSidebarStatus] = useState(true);
+
   return (
-    <div className="flex h-[100vh] flex-row border border-[red]">
-      <SideBar />
-      <TopNav />
+    <div className="flex h-[100vh] flex-row items-start">
+      <SideBar
+        sidebarIsOpen={sidebarStatus}
+        setSidebarIsOpen={setSidebarStatus}
+      />
+
+      <div
+        className={`${
+          sidebarStatus ? "ml-64" : "ml-20"
+        } min-h-[100vh] w-full pb-28`}
+      >
+        <TopNav sidebarIsOpen={sidebarStatus} />
+      </div>
     </div>
   );
 }

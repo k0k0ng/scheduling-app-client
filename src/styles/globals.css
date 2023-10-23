@@ -8,6 +8,29 @@ body {
   background: #121212;
 
   p {
-    color: red;
+    font-family: "Poppins";
   }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Poppins;
+}
+
+.search-form:focus-within,
+.search-form:hover {
+  border: 1px solid #7b46de;
+}
+
+input {
+  color: #c0c0c0;
+  font-family: Poppins;
+  font-size: 14px;
+  background-color: transparent;
+  border: none;
+  outline: none;
 }

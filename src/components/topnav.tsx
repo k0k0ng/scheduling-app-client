@@ -4,10 +4,16 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import CampaignIcon from "@mui/icons-material/Campaign";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 
-export default function TopNav() {
+type SidebarState = {
+  sidebarIsOpen: boolean;
+};
+
+export default function TopNav({ sidebarIsOpen }: SidebarState) {
   return (
-    <nav className="ml-64 flex min-h-[75px] w-full flex-row items-center justify-between border px-20">
-      <p>Overview</p>
+    <nav
+      className={` flex min-h-[75px] w-full flex-row items-center justify-between border-b-[1px] border-slate-700 pl-10 pr-20`}
+    >
+      <p className="text-[18px] font-semibold ">Overview</p>
       <div className="flex flex-row gap-x-4">
         <button type="button">
           <NotificationsNoneIcon />
@@ -24,13 +30,13 @@ export default function TopNav() {
         </button>
 
         <div className="ml-8 flex flex-col">
-          <span>John Doe</span>
-          <span>Free Account</span>
+          <span className="text-[16px]">John Does</span>
+          <span className="text-[12px]">Free Account</span>
         </div>
 
-        <div className="flex items-center">
-          <AccountCircleIcon />
-        </div>
+        <button className="ml-2 flex items-center">
+          <AccountCircleIcon className="h-[45px] w-[45px]" />
+        </button>
       </div>
     </nav>
   );

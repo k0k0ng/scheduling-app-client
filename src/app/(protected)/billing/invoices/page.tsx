@@ -5,7 +5,7 @@ import { useState } from "react";
 import SideBar from "@/components/Sidebar";
 import TopNav from "@/components/TopNav";
 
-export default function SettingsPermissions() {
+export default function Invoices() {
   const [sidebarStatus, setSidebarStatus] = useState(true);
 
   return (
@@ -19,10 +19,10 @@ export default function SettingsPermissions() {
           sidebarStatus ? "ml-64" : "ml-20"
         } min-h-[100vh] w-full pb-28`}
       >
-        <TopNav />
+        <TopNav title="Billing/Invoices" />
 
         <main className="mt-8 h-[100vh] min-w-[20rem] pl-10 pr-20">
-          <div>SettingsPermissions</div>
+          Invoices
         </main>
       </div>
     </div>

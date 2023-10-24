@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import SideBar from "@/components/SideBar";
+import SideBar from "@/components/Sidebar";
 import TopNav from "@/components/TopNav";
 
 export default function SettingsChannels() {
@@ -19,10 +19,10 @@ export default function SettingsChannels() {
           sidebarStatus ? "ml-64" : "ml-20"
         } min-h-[100vh] w-full pb-28`}
       >
-        <TopNav />
+        <TopNav title="Settings/Channels" />
 
         <main className="mt-8 h-[100vh] min-w-[20rem] pl-10 pr-20">
-          <div>SettingsChannels</div>
+          <div>Settings Channels</div>
         </main>
       </div>
     </div>

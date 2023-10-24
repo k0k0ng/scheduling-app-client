@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import SideBar from "@/components/SideBar";
+import SideBar from "@/components/Sidebar";
 import TopNav from "@/components/TopNav";
 
 export default function SettingsSubscription() {

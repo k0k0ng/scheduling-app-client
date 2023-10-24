@@ -3,10 +3,10 @@ import CampaignIcon from "@mui/icons-material/Campaign";
 import MenuIcon from "@mui/icons-material/Menu";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 
-export default function TopNav() {
+export default function TopNav({ title }: any) {
   return (
     <nav className=" pl- flex min-h-[4.75rem] w-full flex-row items-center justify-between border-b-[1px] border-slate-700 pl-8 pr-6 xl:pl-10 xl:pr-10 2xl:pr-20">
-      <p className="font-poppins text-[18px] font-semibold">Overview</p>
+      <p className="font-poppins text-[18px] font-semibold">{title}</p>
       <div className="flex flex-row gap-x-4">
         <button type="button" className="hidden md:block">
           <NotificationsNoneIcon />

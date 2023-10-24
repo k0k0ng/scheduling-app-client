@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 import { useRouter } from "next/navigation";
 
-import SideBar from "@/components/SideBar";
+import SideBar from "@/components/Sidebar";
 import TopNav from "@/components/TopNav";
 import SearchIcon from "@mui/icons-material/Search";
 import TopCardButton from "./components/TopCardButton";
@@ -48,7 +48,7 @@ export default function Dashboard() {
         setSidebarIsOpen={setSidebarStatus}
       />
       <div className={`w-full pb-20 ${sidebarStatus ? "ml-64" : "ml-20"} `}>
-        <TopNav />
+        <TopNav title="Dashboard" />
 
         <main className="mt-8 min-w-[20rem] pl-8 pr-6 xl:pl-10 xl:pr-10 2xl:pr-20">
           <div className="flex min-h-[45px] w-full flex-row justify-end">

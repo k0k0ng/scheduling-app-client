@@ -38,7 +38,7 @@ export default function SideBar({
       <div className="relative m-auto h-full border-r dark:border-[#5C5F65] dark:bg-[#202020]">
         {/* sidebar logo and title */}
         <div className="relative border-b dark:border-[#5C5F65] dark:bg-[#2C2C2C]">
-          <div className="ml-3 justify-between px-3 py-4">
+          <div className="ml-3 flex min-h-[4.75rem] items-center justify-between px-3">
             <a href="/#" className="flex items-center">
               <Image
                 src="/logo.png"

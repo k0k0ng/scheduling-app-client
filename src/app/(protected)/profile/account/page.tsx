@@ -22,7 +22,7 @@ export default function Account() {
         <TopNav title="Profile/Account" />
 
         <main className="mt-8 h-[100vh] min-w-[20rem] pl-10 pr-20">
-          Account test
+          Account test2
         </main>
       </div>
     </div>

@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 
-import TopNav from "@/components/TopNav";
-import SideBar from "@/components/SideBar";
+import TopNav from "@/components/topnav";
+import SideBar from "@/components/sidebar";
 
 export default function Home() {
   const [sidebarStatus, setSidebarStatus] = useState(true);

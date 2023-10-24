@@ -30,50 +30,47 @@ export default function SideBar({
   setSidebarIsOpen,
 }: SidebarState) {
   return (
-    <>
-      <aside
-        className={`fixed left-0 top-0 z-20 ${
-          sidebarOpen ? "w-64" : "w-20"
-        } h-screen -translate-x-full transition-transform sm:translate-x-0`}
-      >
-        <div className="relative m-auto h-full border-r dark:border-[#5C5F65] dark:bg-[#202020]">
-          {/* sidebar logo and title */}
-          <div className="relative border-b dark:border-[#5C5F65] dark:bg-[#2C2C2C]">
-            <div className="ml-3 justify-between px-3 py-4">
-              <a href="/#" className="flex items-center">
-                <Image
-                  src="/logo.png  "
-                  className={` ${
-                    !sidebarOpen && "rotate-[360deg]"
-                  } mr-3 h-6 duration-500 sm:h-7`}
-                  alt="Logoipsum"
-                  width={30}
-                  height={35}
-                />
-                <span
-                  className={`text-xl font-bold text-gray-300 ${
-                    !sidebarOpen && "hidden scale-0"
-                  }`}
-                >
-                  Logoipsum
-                </span>{" "}
-              </a>
-              {/* toggle */}
-              <div className="absolute -bottom-10 -right-4 h-14 w-auto">
-                <div
-                  className="rounded-mg cursor-pointer rounded-lg border border-solid border-[#5C5F65] bg-[#161A23] p-1.5"
-                  onClick={() => {
-                    sidebarsetOpen(!sidebarOpen);
-                  }}
-                >
-                  <CodeOutlinedIcon
-                    fontSize="small"
-                    color="secondary"
-                  ></CodeOutlinedIcon>
-                </div>
-              </div>
+    <aside
+      className={`fixed left-0 top-0 z-20 ${
+        sidebarIsOpen ? "w-64" : "w-20"
+      } h-screen -translate-x-full transition-transform sm:translate-x-0`}
+    >
+      <div className="relative m-auto h-full border-r dark:border-[#5C5F65] dark:bg-[#202020]">
+        {/* sidebar logo and title */}
+        <div className="relative border-b dark:border-[#5C5F65] dark:bg-[#2C2C2C]">
+          <div className="ml-3 justify-between px-3 py-4">
+            <a href="/#" className="flex items-center">
+              <Image
+                src="/logo.png  "
+                className={` ${
+                  !sidebarIsOpen && "rotate-[360deg]"
+                } mr-3 h-6 duration-500 sm:h-7`}
+                alt="Logoipsum"
+                width={30}
+                height={35}
+              />
+              <span
+                className={`text-xl font-bold text-gray-300 ${
+                  !sidebarIsOpen && "hidden scale-0"
+                }`}
+              >
+                Logoipsum
+              </span>{" "}
+            </a>
+            {/* toggle */}
+            <div className="absolute -bottom-10 -right-4 h-14 w-auto">
+              <button
+                type="button"
+                className="rounded-mg cursor-pointer rounded-lg border border-solid border-[#5C5F65] bg-[#161A23] p-1.5"
+                onClick={() => {
+                  setSidebarIsOpen(!sidebarIsOpen);
+                }}
+              >
+                <CodeOutlinedIcon fontSize="small" color="secondary" />
+              </button>
             </div>
           </div>
+        </div>
 
         {/* sidebar components */}
         {/*  */}
@@ -239,40 +236,39 @@ export default function SideBar({
           {/* sidebar components div end */}
         </div>
 
-          {/* absolute bottom position light&dark */}
-          <div className="absolute bottom-0 h-20 w-full bg-[#2D2F39]">
-            <div
+        {/* footer absolute bottom position light&dark */}
+        <div className="absolute bottom-0 h-20 w-full bg-[#2D2F39]">
+          <div
+            className={`${
+              sidebarIsOpen ? "mx-8" : "mx-2"
+            } mx-8 my-4 flex  rounded-md bg-[#202020] p-2`}
+          >
+            <button
+              type="button"
               className={`${
-                sidebarOpen ? "mx-8" : "mx-2"
-              } mx-8 my-4 flex  rounded-md bg-[#202020] p-2`}
+                !sidebarIsOpen && "hidden scale-0"
+              } w-full items-center rounded-lg p-2 text-sm font-medium text-gray-500 hover:bg-purple-100 dark:hover:bg-purple-700  dark:hover:text-white`}
             >
-              <button
-                type="button"
-                className={`${
-                  !sidebarOpen && "hidden scale-0"
-                } w-full items-center rounded-lg p-2 text-sm font-medium text-gray-500 hover:bg-purple-100 dark:hover:bg-purple-700  dark:hover:text-white`}
+              <LightModeOutlinedIcon fontSize="small" color="secondary" />
+              <span className="ml-3 self-center">Light</span>
+            </button>
+            <button
+              type="button"
+              className="w-full items-center rounded-lg p-2 text-sm font-medium text-gray-500 hover:bg-purple-100 dark:hover:bg-purple-700  dark:hover:text-white"
+            >
+              <DarkModeOutlinedIcon fontSize="small" color="primary" />
+              <span
+                className={`ml-3 self-center  ${
+                  !sidebarIsOpen && "hidden scale-0"
+                }`}
               >
-                <LightModeOutlinedIcon fontSize="small" color="secondary" />
-                <span className="ml-3 self-center">Light</span>
-              </button>
-              <button
-                type="button"
-                className="w-full items-center rounded-lg p-2 text-sm font-medium text-gray-500 hover:bg-purple-100 dark:hover:bg-purple-700  dark:hover:text-white"
-              >
-                <DarkModeOutlinedIcon fontSize="small" color="primary" />
-                <span
-                  className={`ml-3 self-center  ${
-                    !sidebarOpen && "hidden scale-0"
-                  }`}
-                >
-                  Dark
-                </span>
-              </button>
-            </div>
-            {/* absolute end div */}
+                Dark
+              </span>
+            </button>
           </div>
-          {/* relative end div */}
+          {/* absolute end div */}
         </div>
+        {/* relative end div */}
       </div>
     </aside>
   );

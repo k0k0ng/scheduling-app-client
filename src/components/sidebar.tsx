@@ -27,7 +27,7 @@ export default function SideBar() {
   return (
     <>
       <aside
-        className={`fixed left-0 top-0 z-20 ${
+        className={`fixed left-0 top-0 sm:z-0 md:z-20 ${
           sidebarOpen ? "w-64" : "w-20"
         } h-screen -translate-x-full transition-transform sm:translate-x-0`}
       >
@@ -55,17 +55,15 @@ export default function SideBar() {
               </a>
               {/* toggle */}
               <div className="absolute -bottom-10 -right-4 h-14 w-auto">
-                <div
+                <button
+                  type="button"
                   className="rounded-mg cursor-pointer rounded-lg border border-solid border-[#5C5F65] bg-[#161A23] p-1.5"
                   onClick={() => {
                     sidebarsetOpen(!sidebarOpen);
                   }}
                 >
-                  <CodeOutlinedIcon
-                    fontSize="small"
-                    color="secondary"
-                  ></CodeOutlinedIcon>
-                </div>
+                  <CodeOutlinedIcon fontSize="small" color="secondary" />
+                </button>
               </div>
             </div>
           </div>
@@ -233,11 +231,11 @@ export default function SideBar() {
             {/* sidebar components div end */}
           </div>
 
-          {/* absolute bottom position light&dark */}
+          {/* footer light&dark */}
           <div className="absolute bottom-0 h-20 w-full bg-[#2D2F39]">
             <div
               className={`${
-                sidebarOpen ? "mx-8" : "mx-2"
+                sidebarOpen ? "mx-8" : "mx-4"
               } mx-8 my-4 flex  rounded-md bg-[#202020] p-2`}
             >
               <button
@@ -263,7 +261,7 @@ export default function SideBar() {
                 </span>
               </button>
             </div>
-            {/* absolute end div */}
+            {/* absolute end div -footer */}
           </div>
           {/* relative end div */}
         </div>

@@ -23,7 +23,7 @@ export default function TopNav({ title }: any) {
         </button>
 
         <div className="ml-8 hidden flex-col md:flex">
-          <span className="text-[16px]">John Does</span>
+          <span className="text-[16px]">John Doe</span>
           <span className="text-[12px]">Free Account</span>
         </div>
 

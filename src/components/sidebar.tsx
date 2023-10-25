@@ -36,42 +36,7 @@ export default function SideBar({
       } h-screen -translate-x-full transition-transform sm:translate-x-0`}
     >
       <div className="relative m-auto h-full border-r dark:border-[#5C5F65] dark:bg-[#202020]">
-        {/* sidebar logo and title */}
-
-        {/* <div className="relative border-b dark:border-[#5C5F65] dark:bg-[#2C2C2C]">
-          <div className="ml-3 flex min-h-[4.75rem] items-center justify-between px-3">
-            <a href="/#" className="flex items-center">
-              <Image
-                src="/logo.png"
-                className={`${
-                  !sidebarIsOpen && "rotate-[360deg]"
-                } mr-3 h-6 duration-500 sm:h-7`}
-                alt="Logoipsum"
-                width={30}
-                height={35}
-              />
-              <span
-                className={`text-xl font-bold text-gray-300 ${
-                  !sidebarIsOpen && "hidden scale-0"
-                }`}
-              >
-                Logoipsum
-              </span>{" "}
-            </a>
-
-            <div className="absolute -bottom-10 -right-4 h-14 w-auto">
-              <button
-                type="button"
-                className="rounded-mg cursor-pointer rounded-lg border border-solid border-[#5C5F65] bg-[#161A23] p-1.5"
-                onClick={() => {
-                  setSidebarIsOpen(!sidebarIsOpen);
-                }}
-              >
-                <CodeOutlinedIcon fontSize="small" color="secondary" />
-              </button>
-            </div> */}
-
-        <div className="relative flex min-h-[75px] flex-row items-center border-b dark:border-[#5C5F65] dark:bg-[#2C2C2C]">
+        <div className="relative flex min-h-[4.75rem] flex-row items-center border-b dark:border-[#5C5F65] dark:bg-[#2C2C2C]">
           <a href="/#" className="ml-6 flex items-center">
             <Image
               src="/logo.png  "

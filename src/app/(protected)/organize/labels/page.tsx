@@ -5,7 +5,7 @@ import { useState } from "react";
 import SideBar from "@/components/Sidebar";
 import TopNav from "@/components/TopNav";
 
-export default function Labels() {
+export default function OrganizeLabels() {
   const [sidebarStatus, setSidebarStatus] = useState(true);
 
   return (
@@ -19,9 +19,11 @@ export default function Labels() {
           sidebarStatus ? "ml-64" : "ml-20"
         } min-h-[100vh] w-full pb-28`}
       >
-        <TopNav title="Organize/Labels" />
+        <TopNav title="Organize" />
 
-        <main className="mt-8 h-[100vh] min-w-[20rem] pl-10 pr-20">Labels</main>
+        <main className="mt-8 h-[100vh] min-w-[20rem] pl-10 pr-20">
+          Organize Labels
+        </main>
       </div>
     </div>
   );

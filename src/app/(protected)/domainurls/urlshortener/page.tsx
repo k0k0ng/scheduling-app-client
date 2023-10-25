@@ -5,7 +5,7 @@ import { useState } from "react";
 import SideBar from "@/components/Sidebar";
 import TopNav from "@/components/TopNav";
 
-export default function UrlShortener() {
+export default function DomainURLsUrlShortener() {
   const [sidebarStatus, setSidebarStatus] = useState(true);
 
   return (
@@ -19,10 +19,10 @@ export default function UrlShortener() {
           sidebarStatus ? "ml-64" : "ml-20"
         } min-h-[100vh] w-full pb-28`}
       >
-        <TopNav title="Domain and URLs/URL Shortener" />
+        <TopNav title="Domain and URLs" />
 
         <main className="mt-8 h-[100vh] min-w-[20rem] pl-10 pr-20">
-          UrlShortener
+          DomainURLs UrlShortener
         </main>
       </div>
     </div>

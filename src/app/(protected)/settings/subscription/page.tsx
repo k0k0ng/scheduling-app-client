@@ -19,10 +19,10 @@ export default function SettingsSubscription() {
           sidebarStatus ? "ml-64" : "ml-20"
         } min-h-[100vh] w-full pb-28`}
       >
-        <TopNav />
+        <TopNav title="Settings" />
 
         <main className="mt-8 h-[100vh] min-w-[20rem] pl-10 pr-20">
-          <div>SettingsSubscription</div>
+          <div>Settings Subscription</div>
         </main>
       </div>
     </div>

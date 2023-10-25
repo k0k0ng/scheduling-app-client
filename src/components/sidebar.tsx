@@ -31,9 +31,10 @@ export default function SideBar({
 }: SidebarState) {
   return (
     <aside
-      className={`fixed left-0 top-0 z-20 ${
+      id="logo-sidebar"
+      className={`fixed left-0 top-0 z-40  ${
         sidebarIsOpen ? "w-64" : "w-20"
-      } h-screen -translate-x-full transition-transform sm:translate-x-0`}
+      }  h-full transition-transform `}
     >
       <div className="relative m-auto h-full border-r dark:border-[#5C5F65] dark:bg-[#202020]">
         {/* sidebar logo and title */}
@@ -89,7 +90,9 @@ export default function SideBar({
             >
               <HomeOutlinedIcon className="ml-2" />
               <span
-                className={`ml-3 self-center ${!sidebarIsOpen && "scale-0"}`}
+                className={`ml-3 self-center ${
+                  !sidebarIsOpen && "hidden scale-0"
+                }`}
               >
                 Dashboard
               </span>
@@ -150,7 +153,9 @@ export default function SideBar({
             >
               <EditNoteOutlinedIcon className="ml-2" />
               <span
-                className={`ml-3 self-center ${!sidebarIsOpen && "scale-0"}`}
+                className={`ml-3 self-center ${
+                  !sidebarIsOpen && "hidden scale-0"
+                }`}
               >
                 Task Manager
               </span>
@@ -173,7 +178,9 @@ export default function SideBar({
             >
               <ShowChartOutlinedIcon className="ml-2" />
               <span
-                className={`ml-3 self-center  ${!sidebarIsOpen && "scale-0"}`}
+                className={`ml-3 self-center  ${
+                  !sidebarIsOpen && "hidden scale-0"
+                }`}
               >
                 Analytics
               </span>
@@ -225,7 +232,9 @@ export default function SideBar({
             >
               <HelpOutlineOutlinedIcon className="ml-2" />
               <span
-                className={`ml-3 self-center  ${!sidebarIsOpen && "scale-0"}`}
+                className={`ml-3 self-center  ${
+                  !sidebarIsOpen && "hidden scale-0"
+                }`}
               >
                 Need Help?
               </span>
@@ -238,7 +247,7 @@ export default function SideBar({
         <div className="absolute bottom-0 h-20 w-full bg-[#2D2F39]">
           <div
             className={`${
-              sidebarIsOpen ? "mx-8" : "mx-4"
+              sidebarIsOpen ? "mx-8" : "mx-1.5"
             } mx-8 my-4 flex  rounded-md bg-[#202020] p-2`}
           >
             <button

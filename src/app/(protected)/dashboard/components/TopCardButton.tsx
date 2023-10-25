@@ -15,7 +15,7 @@ export default function TopCardButton({
     <button
       type="button"
       onClick={cardAction}
-      className="flex flex-col items-center justify-center rounded-[5px] bg-[#202020] py-12 transition duration-300 hover:bg-[#7B46DE] 2xl:py-20"
+      className="flex flex-col items-center justify-center rounded-[5px] bg-[#202020] py-10 transition duration-300 hover:bg-[#7B46DE] 2xl:py-16"
     >
       <img
         src={cardImage}

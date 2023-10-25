@@ -24,22 +24,22 @@ input {
 }
 
 /* width */
-::-webkit-scrollbar {
+.sidebarscroll::-webkit-scrollbar {
   width: 3px;
 }
 
 /* Track */
-::-webkit-scrollbar-track {
+.sidebarscroll::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
 
 /* Handle */
-::-webkit-scrollbar-thumb {
+.sidebarscroll::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 5px;
 }
 
 /* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
+.sidebarscroll::-webkit-scrollbar-thumb:hover {
   background: #555;
 }

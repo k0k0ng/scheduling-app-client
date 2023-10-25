@@ -127,7 +127,7 @@ const ProfileListIcon = [
 ];
 
 function IconTitleManager({ linkTitle }: any) {
-  if (linkTitle === "publish") {
+  if (linkTitle === "publishing") {
     return <CalendarTodayOutlinedIcon className={icontitleclassName} />;
   }
   if (linkTitle === "tools") {
@@ -139,7 +139,7 @@ function IconTitleManager({ linkTitle }: any) {
   if (linkTitle === "organize") {
     return <AccountTreeOutlinedIcon className={icontitleclassName} />;
   }
-  if (linkTitle === "domainurl") {
+  if (linkTitle === "domainurls") {
     return <LanguageOutlinedIcon className={icontitleclassName} />;
   }
   if (linkTitle === "billing") {
@@ -152,7 +152,7 @@ function IconTitleManager({ linkTitle }: any) {
 }
 
 function IconListManager({ linkTitle, index }: any) {
-  if (linkTitle === "publish") {
+  if (linkTitle === "publishing") {
     return PublishingListIcon[index];
   }
   if (linkTitle === "tools") {
@@ -164,7 +164,7 @@ function IconListManager({ linkTitle, index }: any) {
   if (linkTitle === "organize") {
     return OrganizeListIcon[index];
   }
-  if (linkTitle === "domainurl") {
+  if (linkTitle === "domainurls") {
     return DomainAndUrlListIcon[index];
   }
   if (linkTitle === "billing") {
@@ -189,7 +189,7 @@ export default function DropDown({
 }) {
   return (
     <details id={linkTitle}>
-      <summary className="group flex w-full items-center rounded-lg p-3 text-base font-normal text-gray-300 hover:bg-purple-100 dark:hover:bg-purple-700 dark:hover:text-white">
+      <summary className="group flex w-full items-center rounded-lg p-3 text-base font-normal text-gray-300 hover:bg-purple-100 dark:hover:bg-[#7B46DE] dark:hover:text-white">
         <IconTitleManager linkTitle={linkTitle} />
         <span className="ml-3 flex-1 text-left text-sm font-medium">
           {sidebarOpen && title}
@@ -203,12 +203,15 @@ export default function DropDown({
               <a
                 className={`${
                   sidebarOpen ? "ml-8 p-2" : "hidden scale-0"
-                }group flex items-center rounded-lg p-2 text-sm font-medium text-gray-300 hover:bg-purple-100 dark:hover:bg-purple-700 dark:hover:text-white`}
-                href={`/#${list}`}
+                }group flex items-center rounded-lg p-2 text-sm font-medium text-gray-300 hover:bg-purple-100 dark:hover:bg-[#7B46DE] dark:hover:text-white`}
+                href={`/${linkTitle}/${list.toLowerCase().replace(/\s/g, "")}`}
               >
                 <IconListManager linkTitle={linkTitle} index={index} />
                 <span className={`${!sidebarOpen && "hidden scale-0"}`}>
                   {list}
+
+                  {/* links name check exist in the folder */}
+                  {console.log(list.toLowerCase().replace(/\s/g, ""))}
                 </span>
               </a>
             </li>

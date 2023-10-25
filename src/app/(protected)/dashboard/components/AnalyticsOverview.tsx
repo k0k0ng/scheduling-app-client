@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import Image from "next/image";
+
 export default function AnalyticsOverview() {
   const [activeChannelCategory, setActiveChannelCategory] =
     useState("facebook");
@@ -17,11 +19,11 @@ export default function AnalyticsOverview() {
             }`}
             onClick={() => setActiveChannelCategory("facebook")}
           >
-            <img
+            <Image
               src="/svg/dashboard/fb-icon.svg"
               alt="facebook logo"
-              width="25px"
-              className=""
+              width={25}
+              height={25}
             />
             <span className="hidden text-[12px]  xl:block">Facebook</span>
           </button>
@@ -33,11 +35,11 @@ export default function AnalyticsOverview() {
             }`}
             onClick={() => setActiveChannelCategory("instagram")}
           >
-            <img
+            <Image
               src="/svg/dashboard/instagram-icon.svg"
               alt="instagram logo"
-              width="22px"
-              className=""
+              width={22}
+              height={22}
             />
             <span className="hidden text-[12px]  xl:block">Instagram</span>
           </button>
@@ -49,11 +51,11 @@ export default function AnalyticsOverview() {
             }`}
             onClick={() => setActiveChannelCategory("discord")}
           >
-            <img
+            <Image
               src="/svg/dashboard/discord-icon.svg"
               alt="discord logo"
-              width="24px"
-              className=""
+              width={24}
+              height={24}
             />
             <span className="hidden text-[12px] xl:block ">Discord</span>
           </button>
@@ -65,11 +67,11 @@ export default function AnalyticsOverview() {
             }`}
             onClick={() => setActiveChannelCategory("linkedin")}
           >
-            <img
+            <Image
               src="/svg/dashboard/linkedin-icon.svg"
               alt="linkedin logo"
-              width="22px"
-              className=""
+              width={22}
+              height={22}
             />
             <span className="hidden text-[12px] xl:block ">LinkedIn</span>
           </button>

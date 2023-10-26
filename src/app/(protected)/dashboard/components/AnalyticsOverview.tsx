@@ -20,7 +20,7 @@ export default function AnalyticsOverview() {
             onClick={() => setActiveChannelCategory("facebook")}
           >
             <Image
-              src="/svg/dashboard/fb-icon.svg"
+              src="/global/svg/icons/fb-icon.svg"
               alt="facebook logo"
               width={25}
               height={25}
@@ -36,7 +36,7 @@ export default function AnalyticsOverview() {
             onClick={() => setActiveChannelCategory("instagram")}
           >
             <Image
-              src="/svg/dashboard/instagram-icon.svg"
+              src="/global/svg/icons/instagram-icon.svg"
               alt="instagram logo"
               width={22}
               height={22}
@@ -52,7 +52,7 @@ export default function AnalyticsOverview() {
             onClick={() => setActiveChannelCategory("discord")}
           >
             <Image
-              src="/svg/dashboard/discord-icon.svg"
+              src="/global/svg/icons/discord-icon.svg"
               alt="discord logo"
               width={24}
               height={24}
@@ -68,7 +68,7 @@ export default function AnalyticsOverview() {
             onClick={() => setActiveChannelCategory("linkedin")}
           >
             <Image
-              src="/svg/dashboard/linkedin-icon.svg"
+              src="/global/svg/icons/linkedin-icon.svg"
               alt="linkedin logo"
               width={22}
               height={22}

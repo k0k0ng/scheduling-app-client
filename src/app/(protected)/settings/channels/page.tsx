@@ -18,6 +18,8 @@ import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined
 import DoDisturbAltIcon from "@mui/icons-material/DoDisturbAlt";
 import DeleteIcon from "@mui/icons-material/Delete";
 
+import "./style.css";
+
 export default function SettingsChannels() {
   const [sidebarStatus, setSidebarStatus] = useState(true);
   const [filteredChannel, setFilteredChannel] = useState("");

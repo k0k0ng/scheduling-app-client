@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 
-import SideBar from "@/components/sidebar";
-import TopNav from "@/components/topnav";
+import SideBar from "@/components/Sidebar";
+import TopNav from "@/components/TopNav";
 
-export default function AiVideoGenerator() {
+export default function ToolsAiVideoGenerator() {
   const [sidebarStatus, setSidebarStatus] = useState(true);
 
   return (
@@ -19,10 +19,10 @@ export default function AiVideoGenerator() {
           sidebarStatus ? "ml-64" : "ml-20"
         } min-h-[100vh] w-full pb-28`}
       >
-        <TopNav title="Tools/AI Video Generator" />
+        <TopNav title="Tools" />
 
         <main className="mt-8 h-[100vh] min-w-[20rem] pl-10 pr-20">
-          AiVideoGenerator
+          Tools Ai Video Generator
         </main>
       </div>
     </div>

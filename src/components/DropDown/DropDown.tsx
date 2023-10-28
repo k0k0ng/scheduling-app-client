@@ -211,7 +211,7 @@ export default function DropDown({
                   {list}
 
                   {/* links name check exist in the folder */}
-                  {console.log(list.toLowerCase().replace(/\s/g, ""))}
+                  {/* {console.log(list.toLowerCase().replace(/\s/g, ""))} */}
                 </span>
               </a>
             </li>

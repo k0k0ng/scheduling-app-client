@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 
-import SideBar from "@/components/sidebar";
-import TopNav from "@/components/topnav";
+import SideBar from "@/components/Sidebar";
+import TopNav from "@/components/TopNav";
 
-export default function Stream() {
+export default function MonitoringStream() {
   const [sidebarStatus, setSidebarStatus] = useState(true);
 
   return (
@@ -19,9 +19,11 @@ export default function Stream() {
           sidebarStatus ? "ml-64" : "ml-20"
         } min-h-[100vh] w-full pb-28`}
       >
-        <TopNav title="Monitoring/Stream" />
+        <TopNav title="Monitoring" />
 
-        <main className="mt-8 h-[100vh] min-w-[20rem] pl-10 pr-20">Stream</main>
+        <main className="mt-8 h-[100vh] min-w-[20rem] pl-10 pr-20">
+          Monitoring Stream
+        </main>
       </div>
     </div>
   );

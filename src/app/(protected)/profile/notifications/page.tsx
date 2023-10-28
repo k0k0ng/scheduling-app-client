@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 
-import SideBar from "@/components/sidebar";
-import TopNav from "@/components/topnav";
+import SideBar from "@/components/Sidebar";
+import TopNav from "@/components/TopNav";
 
-export default function Notifications() {
+export default function ProfileNotifications() {
   const [sidebarStatus, setSidebarStatus] = useState(true);
 
   return (
@@ -19,10 +19,10 @@ export default function Notifications() {
           sidebarStatus ? "ml-64" : "ml-20"
         } min-h-[100vh] w-full pb-28`}
       >
-        <TopNav title="Profile/Notifications" />
+        <TopNav title="Profile" />
 
         <main className="mt-8 h-[100vh] min-w-[20rem] pl-10 pr-20">
-          Notifications
+          Profile Notifications
         </main>
       </div>
     </div>

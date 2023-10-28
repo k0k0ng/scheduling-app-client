@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 
-import SideBar from "@/components/sidebar";
-import TopNav from "@/components/topnav";
+import SideBar from "@/components/Sidebar";
+import TopNav from "@/components/TopNav";
 
 export default function TaskManager() {
   const [sidebarStatus, setSidebarStatus] = useState(true);

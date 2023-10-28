@@ -3,29 +3,30 @@
 import { useState } from "react";
 import Image from "next/image";
 
-import SideBar from "@/components/sidebar";
-import TopNav from "@/components/topnav";
+import SideBar from "@/components/Sidebar";
+import TopNav from "@/components/TopNav";
 import Button from "@/components/Button/Button";
 
-export default function Account() {
+export default function ProfileAccount() {
   const [sidebarStatus, setSidebarStatus] = useState(true);
 
   return (
-    <div className="flex h-[100vh] flex-row items-start">
+    <div className="flex flex-row items-start">
       <SideBar
         sidebarIsOpen={sidebarStatus}
         setSidebarIsOpen={setSidebarStatus}
       />
       <div
-        className={`${
-          sidebarStatus ? "ml-64" : "ml-20"
-        } min-h-[100vh] w-full pb-28`}
+        // mobile will effect on media 76px
+        className={`w-full pb-20 ${sidebarStatus ? "md:ml-64" : "md:ml-20"} `}
       >
         <TopNav title="Profile/Account" />
 
-        <main className="mt-8 h-[100vh] min-w-[20rem] pl-10 pr-20">
+        <main className="mt-8 min-w-[20rem] pl-8 pr-6 xl:pl-10 xl:pr-10 2xl:pr-20">
           {/* <!-- This is an profile --> */}
-
+          <p className="mb-5 font-poppins text-[20px] font-semibold md:hidden">
+            Account
+          </p>
           <div className="h-full">
             <div className="block min-h-[80vh] md:flex">
               {/* profile picture */}
@@ -34,7 +35,7 @@ export default function Account() {
                   <div className="relative md:mt-6">
                     <Image
                       id="showImage"
-                      className="w-48 max-w-xs items-stretch rounded border border-[#828181] bg-[#2C2C2C] p-5"
+                      className=" w-[200px] max-w-xs items-stretch rounded border border-[#828181] bg-[#2C2C2C] p-5"
                       src="/svg/profile/profile-icon.svg"
                       alt="profile_picture"
                       width={148}
@@ -63,7 +64,7 @@ export default function Account() {
                 </div>
               </div>
 
-              <form className="w-full bg-[#202020]">
+              <form className="w-full bg-[#202020] font-poppins">
                 <div className="p-12 md:mr-20 md:mt-12">
                   <div className="-mx-3 mb-6 flex flex-wrap">
                     <div className="mb-6 w-full px-3 md:mb-0 md:w-1/2">
@@ -73,7 +74,7 @@ export default function Account() {
                       >
                         First Name
                         <input
-                          className="mb-3 block w-full appearance-none rounded border border-gray-200 bg-[#2C2C2C] px-4 py-3 leading-tight text-gray-200 focus:border-gray-500 focus:bg-[#828181] focus:outline-none"
+                          className="my-2 block w-full appearance-none rounded border border-gray-200 bg-[#2C2C2C] px-4 py-3 leading-tight text-gray-200 focus:border-gray-500 focus:bg-[#828181] focus:outline-none"
                           id="firstName"
                           type="text"
                           placeholder=""
@@ -87,7 +88,7 @@ export default function Account() {
                       >
                         Last Name
                         <input
-                          className="mb-3 block w-full appearance-none rounded border border-gray-200 bg-[#2C2C2C] px-4 py-3 leading-tight text-gray-200 focus:border-gray-500 focus:bg-[#828181] focus:outline-none"
+                          className="my-2  block w-full appearance-none rounded border border-gray-200 bg-[#2C2C2C] px-4 py-3 leading-tight text-gray-200 focus:border-gray-500 focus:bg-[#828181] focus:outline-none"
                           id="lastName"
                           type="text"
                           placeholder=""
@@ -103,7 +104,7 @@ export default function Account() {
                       >
                         Email Address
                         <input
-                          className="mb-3 block w-full appearance-none rounded border border-gray-200 bg-[#2C2C2C] px-4 py-3 leading-tight text-gray-200 focus:border-gray-500 focus:bg-[#828181] focus:outline-none"
+                          className="my-2  block w-full appearance-none rounded border border-gray-200 bg-[#2C2C2C] px-4 py-3 leading-tight text-gray-200 focus:border-gray-500 focus:bg-[#828181] focus:outline-none"
                           id="emailAddress"
                           type="email"
                           placeholder=""
@@ -119,7 +120,7 @@ export default function Account() {
                       >
                         Mobile Number
                         <input
-                          className="mb-3 block w-full appearance-none rounded border border-gray-200 bg-[#2C2C2C] px-4 py-3 leading-tight text-gray-200 focus:border-gray-500 focus:bg-[#828181] focus:outline-none"
+                          className="my-2  block w-full appearance-none rounded border border-gray-200 bg-[#2C2C2C] px-4 py-3 leading-tight text-gray-200 focus:border-gray-500 focus:bg-[#828181] focus:outline-none"
                           id="mobileNumber"
                           type="text"
                           placeholder=""

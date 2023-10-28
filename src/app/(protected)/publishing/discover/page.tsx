@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 
-import SideBar from "@/components/sidebar";
-import TopNav from "@/components/topnav";
+import SideBar from "@/components/Sidebar";
+import TopNav from "@/components/TopNav";
 
-export default function Discover() {
+export default function PublishingDiscover() {
   const [sidebarStatus, setSidebarStatus] = useState(true);
 
   return (
@@ -19,7 +19,7 @@ export default function Discover() {
           sidebarStatus ? "ml-64" : "ml-20"
         } min-h-[100vh] w-full pb-28`}
       >
-        <TopNav title="Publishing/Discover" />
+        <TopNav title="Publishing" />
 
         <main className="mt-8 h-[100vh] min-w-[20rem] pl-10 pr-20">
           Discover

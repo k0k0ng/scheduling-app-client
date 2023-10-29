@@ -27,77 +27,79 @@ export default function ProfileAccount() {
           <p className="mb-5 font-poppins text-[20px] font-semibold md:hidden">
             Account
           </p>
-          <div className="h-full">
-            <div className="block min-h-[80vh] md:flex">
-              {/* profile picture */}
-              <div className="flex bg-[#202020] md:w-2/5">
-                <div className="p-12 md:ml-20 md:mt-12">
-                  <div className="relative md:mt-6">
-                    <Image
-                      id="showImage"
-                      className=" w-[200px] max-w-xs items-stretch rounded border border-[#828181] bg-[#2C2C2C] p-5"
-                      src="/svg/profile/profile-icon.svg"
-                      alt="profile_picture"
-                      width={148}
-                      height={148}
-                    />
-                    <button className="absolute -right-3 -top-3" type="button">
-                      <Image
-                        src="/svg/profile/profile-edit.svg"
-                        alt="edit"
-                        width={36}
-                        height={36}
-                      />
-                    </button>
-                    <button
-                      className="absolute -bottom-3 -right-3"
-                      type="button"
-                    >
-                      <Image
-                        src="/svg/profile/profile-delete.svg"
-                        alt="delete"
-                        width={36}
-                        height={36}
-                      />
-                    </button>
-                  </div>
-                </div>
-              </div>
 
-              <form className="w-full bg-[#202020] font-poppins">
-                <div className="p-12 md:mr-20 md:mt-12">
-                  <div className="-mx-3 mb-6 flex flex-wrap">
-                    <div className="mb-6 w-full px-3 md:mb-0 md:w-1/2">
-                      <label
-                        className="mb-2 block text-xs font-normal tracking-wide text-white"
-                        htmlFor="firstName"
+          <div className="min-h-[80vh] rounded bg-[#202020] md:flex">
+            <form className="w-full font-poppins">
+              {/* spacing */}
+              <div className="p-8 md:mx-16 md:my-12 md:p-0 lg:p-12">
+                <div className="block lg:flex">
+                  <div className="flex h-full w-1/3 justify-start md:mt-6 lg:mr-12  ">
+                    <div className="relative mb-6">
+                      <Image
+                        id="showImage"
+                        className="w-[198px] max-w-xs items-stretch rounded border border-[#828181] bg-[#2C2C2C] p-5"
+                        src="/svg/profile/profile-icon.svg"
+                        alt="profile_picture"
+                        width={148}
+                        height={148}
+                      />
+                      <button
+                        className="absolute -right-3 -top-3"
+                        type="button"
                       >
-                        First Name
-                        <input
-                          className="my-2 block w-full appearance-none rounded border border-gray-200 bg-[#2C2C2C] px-4 py-3 leading-tight text-gray-200 focus:border-gray-500 focus:bg-[#828181] focus:outline-none"
-                          id="firstName"
-                          type="text"
-                          placeholder=""
+                        <Image
+                          src="/svg/profile/profile-edit.svg"
+                          alt="edit"
+                          width={36}
+                          height={36}
                         />
-                      </label>
-                    </div>
-                    <div className="w-full px-3 md:w-1/2">
-                      <label
-                        className="mb-2 block text-xs font-normal tracking-wide text-white"
-                        htmlFor="lastName"
+                      </button>
+                      <button
+                        className="absolute -bottom-3 -right-3"
+                        type="button"
                       >
-                        Last Name
-                        <input
-                          className="my-2  block w-full appearance-none rounded border border-gray-200 bg-[#2C2C2C] px-4 py-3 leading-tight text-gray-200 focus:border-gray-500 focus:bg-[#828181] focus:outline-none"
-                          id="lastName"
-                          type="text"
-                          placeholder=""
+                        <Image
+                          src="/svg/profile/profile-delete.svg"
+                          alt="delete"
+                          width={36}
+                          height={36}
                         />
-                      </label>
+                      </button>
                     </div>
                   </div>
-                  <div className="-mx-3 mb-6 flex flex-wrap">
-                    <div className="w-full px-3">
+                  <div className="w-full">
+                    <div className="md:flex md:flex-wrap">
+                      <div className="mb-6 w-full md:p-1 lg:w-1/2">
+                        <label
+                          className="block text-xs font-normal tracking-wide text-white"
+                          htmlFor="firstName"
+                        >
+                          First Name
+                          <input
+                            className="my-2 block w-full appearance-none rounded border border-gray-200 bg-[#2C2C2C] px-4 py-3 leading-tight text-gray-200 focus:border-gray-500 focus:bg-[#828181] focus:outline-none"
+                            id="firstName"
+                            type="text"
+                            placeholder=""
+                          />
+                        </label>
+                      </div>
+                      <div className="mb-6 w-full md:p-1 lg:w-1/2">
+                        <label
+                          className="block text-xs font-normal tracking-wide text-white"
+                          htmlFor="lastName"
+                        >
+                          Last Name
+                          <input
+                            className="my-2 block w-full appearance-none rounded border border-gray-200 bg-[#2C2C2C] px-4 py-3 leading-tight text-gray-200 focus:border-gray-500 focus:bg-[#828181] focus:outline-none"
+                            id="lastName"
+                            type="text"
+                            placeholder=""
+                          />
+                        </label>
+                      </div>
+                    </div>
+
+                    <div className="mb-6 md:p-1">
                       <label
                         className="mb-2 block text-xs font-normal tracking-wide text-white"
                         htmlFor="emailAddress"
@@ -111,9 +113,7 @@ export default function ProfileAccount() {
                         />
                       </label>
                     </div>
-                  </div>
-                  <div className="-mx-3 mb-6 flex flex-wrap">
-                    <div className="w-full px-3">
+                    <div className="mb-6 md:p-1">
                       <label
                         className="mb-2 block text-xs font-normal tracking-wide text-white"
                         htmlFor="mobileNumber"
@@ -128,17 +128,18 @@ export default function ProfileAccount() {
                       </label>
                     </div>
                   </div>
-                  <div className="grid justify-items-end">
-                    <div>
-                      <Button size="sm" type="primary" className="button--">
-                        Save Changes
-                      </Button>
-                    </div>
-                  </div>
                 </div>
-              </form>
-            </div>
+
+                <div className="mb-6 grid justify-items-end">
+                  <Button size="sm" type="primary" className="button--">
+                    Save Changes
+                  </Button>
+                </div>
+              </div>
+            </form>
           </div>
+
+          {/* end main */}
         </main>
       </div>
     </div>

@@ -4,25 +4,76 @@ import { useState } from "react";
 
 import SideBar from "@/components/Sidebar";
 import TopNav from "@/components/TopNav";
+import Button from "@/components/Button/Button";
+
+import Password from "./components/Password";
 
 export default function ProfileChangePassword() {
   const [sidebarStatus, setSidebarStatus] = useState(true);
+  const [currentPassword, setCurrentPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmNewPassword, setConfirmNewPassword] = useState("");
 
   return (
-    <div className="flex h-[100vh] flex-row items-start">
+    <div className="flex flex-row items-start">
       <SideBar
         sidebarIsOpen={sidebarStatus}
         setSidebarIsOpen={setSidebarStatus}
       />
       <div
-        className={`${
-          sidebarStatus ? "ml-64" : "ml-20"
-        } min-h-[100vh] w-full pb-28`}
+        // mobile will effect on media 76px
+        className={`w-full pb-20 ${sidebarStatus ? "md:ml-64" : "md:ml-20"} `}
       >
-        <TopNav title="Profile" />
+        <TopNav title="Profile/Change Password" />
 
-        <main className="mt-8 h-[100vh] min-w-[20rem] pl-10 pr-20">
-          Profile Change Password
+        <main className="mt-8 min-w-[20rem] pl-8 pr-6 xl:pl-10 xl:pr-10 2xl:pr-20">
+          {/* <!-- This is an profile --> */}
+          <p className="mb-5 font-poppins text-[20px] font-semibold md:hidden">
+            Change Password
+          </p>
+
+          <div className="min-h-[80vh] rounded bg-[#202020] md:flex">
+            <form className="w-full font-poppins">
+              <div className="p-8 md:mx-16 md:my-12 md:p-0 lg:p-12">
+                <div className="mb-6">
+                  <Password
+                    labelTitle="Current Password"
+                    id="currentpass"
+                    value={currentPassword}
+                    onChange={(e: any) => {
+                      setCurrentPassword(e.target.value);
+                    }}
+                  />
+                </div>
+                <div className="mb-6">
+                  <Password
+                    labelTitle="New Password"
+                    id="newpass"
+                    value={newPassword}
+                    onChange={(e: any) => {
+                      setNewPassword(e.target.value);
+                    }}
+                  />
+                </div>
+                <div className="mb-6">
+                  <Password
+                    labelTitle="Confirm New Password"
+                    id="confirmpass"
+                    value={confirmNewPassword}
+                    onChange={(e: any) => {
+                      setConfirmNewPassword(e.target.value);
+                    }}
+                  />
+                </div>
+                <div className="mb-6 grid justify-items-end">
+                  <Button size="sm" type="primary" className="button--">
+                    Save Changes
+                  </Button>
+                </div>
+              </div>
+            </form>
+          </div>
+          {/* endmain */}
         </main>
       </div>
     </div>

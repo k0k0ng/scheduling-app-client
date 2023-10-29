@@ -58,7 +58,7 @@ export default function ProfileChangePassword() {
                 <div className="mb-6">
                   <Password
                     labelTitle="Confirm New Password"
-                    id="confirmpass"
+                    id="confirmpassword"
                     value={confirmNewPassword}
                     onChange={(e: any) => {
                       setConfirmNewPassword(e.target.value);

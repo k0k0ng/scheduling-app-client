@@ -28,3 +28,11 @@
     opacity: 0;
   }
 }
+
+.channel-card-btn:hover > .connect-text {
+  background-color: #7b46de;
+}
+
+.connect-text {
+  transition: background-color 0.3s;
+}

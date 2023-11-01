@@ -37,9 +37,9 @@ export default function SideBar({
     >
       <div className="relative m-auto h-full border-r dark:border-[#5C5F65] dark:bg-[#202020]">
         <div className="relative flex min-h-[4.75rem] flex-row items-center border-b dark:border-[#5C5F65] dark:bg-[#2C2C2C]">
-          <a href="/#" className="ml-6 flex items-center">
+          <a href="/" className="ml-6 flex items-center">
             <Image
-              src="/logo.png  "
+              src="/logo.png"
               className={` ${
                 !sidebarIsOpen && "rotate-[360deg]"
               } mr-3 duration-500 `}

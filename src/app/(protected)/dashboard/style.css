@@ -1,0 +1,12 @@
+.top-card-button-bg {
+  opacity: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url("/dashboard/bg/dashboard-menu-bg.png");
+  transition: opacity 0.3s;
+}
+
+.top-card-button:hover .top-card-button-bg {
+  opacity: 1;
+}

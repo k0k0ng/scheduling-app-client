@@ -10,7 +10,6 @@ body {
   background: #121212;
 }
 
-.search-form:focus-within,
 .search-form:hover {
   border: 1px solid #7b46de;
 }

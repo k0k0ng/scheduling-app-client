@@ -1,0 +1,53 @@
+/*  */
+.button-- {
+  display: inline-flex;
+  align-items: center;
+  font-style: normal;
+  font-weight: thin;
+  text-align: center;
+  transition:
+    color 0.3s,
+    background-color 0.3s;
+}
+
+/* use only if button is transparent */
+
+/* primary */
+.border-primary {
+  border: 1px solid;
+  border-color: rgb(168 85 247);
+}
+
+.border-primary:hover {
+  background-color: rgb(126 34 206);
+}
+
+/* secondary */
+.border-secondary {
+  border: 1px solid;
+  border-color: rgb(59 130 246);
+}
+
+.border-secondary:hover {
+  background-color: rgb(29 78 216);
+}
+
+/* success */
+.border-success {
+  border: 1px solid;
+  border-color: rgb(16 185 129);
+}
+
+.border-success:hover {
+  background-color: rgb(4 120 87);
+}
+
+/* danger */
+.border-danger {
+  border: 1px solid;
+  border-color: rgb(244 63 94);
+}
+
+.border-danger:hover {
+  background-color: rgb(190 18 60);
+}

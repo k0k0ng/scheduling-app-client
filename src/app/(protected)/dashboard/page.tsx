@@ -49,7 +49,9 @@ export default function Dashboard() {
         sidebarIsOpen={sidebarStatus}
         setSidebarIsOpen={setSidebarStatus}
       />
-      <div className={`w-full pb-20 ${sidebarStatus ? "ml-64" : "ml-20"} `}>
+      <div
+        className={`w-full pb-20 ${sidebarStatus ? "md:ml-64" : "md:ml-20"} `}
+      >
         <TopNav title="Dashboard" />
 
         <main className="mt-8 min-w-[20rem] pl-8 pr-6 xl:pl-10 xl:pr-10 2xl:pr-20">

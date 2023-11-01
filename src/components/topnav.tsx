@@ -1,6 +1,6 @@
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import CampaignIcon from "@mui/icons-material/Campaign";
-import MenuIcon from "@mui/icons-material/Menu";
+// import MenuIcon from "@mui/icons-material/Menu";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 
 export default function TopNav({ title }: any) {
@@ -27,9 +27,10 @@ export default function TopNav({ title }: any) {
           <span className="text-[12px]">Free Account</span>
         </div>
 
-        <button type="button" className="md:hidden">
+        {/* i already add menu icon on sidebar/ commented by: keroy */}
+        {/* <button type="button" className="md:hidden">
           <MenuIcon />
-        </button>
+        </button> */}
 
         <button type="button" className="ml-2 flex items-center">
           <AccountCircleIcon className="h-[45px] w-[45px]" />

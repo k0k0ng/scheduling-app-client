@@ -7,7 +7,7 @@ type LinkType = {
   action: () => any;
 };
 
-export default function PopUpFilterMenuLink({
+export default function PopUpMenuLink({
   label,
   icon,
   isDisabled,

@@ -30,7 +30,7 @@ export default function ConnectChannelModal() {
         />
       </form>
 
-      <div className="mx-10 mt-6 grid max-h-[95vh] grid-cols-2 items-start justify-start gap-6 overflow-y-scroll p-4 md:grid-cols-3 2xl:grid-cols-4">
+      <div className="mx-10 mt-6 grid max-h-[95vh] grid-cols-2 items-start justify-start gap-6 overflow-y-scroll p-4 md:grid-cols-3 xl:grid-cols-4">
         <button
           type="button"
           className="channel-card-btn relative col-span-1 flex min-h-[11rem] flex-col items-center justify-center overflow-hidden rounded bg-[#3B5998] font-poppins text-white"

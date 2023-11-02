@@ -254,7 +254,7 @@ export default function SettingsChannels() {
 
         <dialog
           ref={connectChannelModal}
-          className="connect-channel-dialog min-w-[100vw] overflow-visible rounded-lg bg-[#202020] py-10 lg:min-w-[80vw] xl:min-w-[40vw]"
+          className="connect-channel-dialog min-w-[100vw] overflow-visible rounded-lg bg-[#202020] py-10 lg:min-w-[80vw] xl:min-w-[60vw] 2xl:min-w-[40vw]"
         >
           <ConnectChannelModal />
 

@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 
+import Image from "next/image";
+
 import SideBar from "@/components/Sidebar";
 import TopNav from "@/components/TopNav";
 
@@ -192,6 +194,56 @@ export default function PublishingScheduler() {
                   <span>Create Post</span>
                 </button>
               </div>
+            </div>
+
+            <div className="flex flex-row items-center justify-evenly gap-x-3 border-t border-[#828181] p-5">
+              <select className=" w-full cursor-pointer rounded-md border border-[#828181] bg-[#2C2C2C] px-4 py-2 font-poppins text-[14px] text-white">
+                <option disabled selected hidden>
+                  Status
+                </option>
+                <option>Draft</option>
+                <option>Scheduled</option>
+                <option>In Progress</option>
+                <option>Published</option>
+                <option>Error</option>
+              </select>
+
+              <select className=" w-full cursor-pointer rounded-md border border-[#828181] bg-[#2C2C2C] px-4 py-2 font-poppins text-[14px] text-white">
+                <option disabled selected hidden>
+                  Content Type
+                </option>
+                <option>Image</option>
+                <option>Video</option>
+              </select>
+
+              <select className=" w-full cursor-pointer rounded-md border border-[#828181] bg-[#2C2C2C] px-4 py-2 font-poppins text-[14px] text-white">
+                <option disabled selected hidden>
+                  Channels
+                </option>
+                <option>Facebook</option>
+                <option>Instagram</option>
+                <option>Discord</option>
+                <option>Linkedin</option>
+              </select>
+
+              <select className=" w-full cursor-pointer rounded-md border border-[#828181] bg-[#2C2C2C] px-4 py-2 font-poppins text-[14px] text-white">
+                <option disabled selected hidden>
+                  Assigned Users
+                </option>
+                <option>John Doe</option>
+              </select>
+
+              <button
+                type="button"
+                className="flex min-h-[40px] min-w-[40px] items-center justify-center rounded-md bg-[#7B46DE]"
+              >
+                <Image
+                  src="/svg/publishing/scheduler/arrow-head-right.svg"
+                  alt="instagram logo"
+                  width={18}
+                  height={18}
+                />
+              </button>
             </div>
 
             <CalendarBody

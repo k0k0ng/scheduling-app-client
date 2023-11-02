@@ -19,6 +19,8 @@ export default function CalendarBody({
   selectedDateValue,
   setSelectedDateValue,
 }: CalendarBodyTypes) {
+  console.log(dummyData);
+
   const getDateRecordStatus = (formatedDateValue: string) => {
     let status = null;
     try {

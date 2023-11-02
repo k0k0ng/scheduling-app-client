@@ -2,8 +2,6 @@
 
 import { useState, useEffect, useRef } from "react";
 
-import Image from "next/image";
-
 import SideBar from "@/components/Sidebar";
 import TopNav from "@/components/TopNav";
 
@@ -16,12 +14,53 @@ import PostsBulkActionMenu from "./components/PostsBulkActionMenu";
 import CalendarBody from "./components/CalendarBody";
 
 import "./style.css";
+import FilterPostsMenu from "./components/FilterPostsMenu";
+
+const dummyData = [
+  { date: "1-11-2023", status: "published" },
+  { date: "2-11-2023", status: "draft" },
+  { date: "4-11-2023", status: "published" },
+  { date: "5-11-2023", status: "published" },
+  { date: "6-11-2023", status: "published" },
+  { date: "7-11-2023", status: "error" },
+  { date: "8-11-2023", status: "error" },
+  { date: "9-11-2023", status: "error" },
+  { date: "10-11-2023", status: "draft" },
+  { date: "11-11-2023", status: "draft" },
+  { date: "12-11-2023", status: "draft" },
+  { date: "13-11-2023", status: "draft" },
+  { date: "14-11-2023", status: "draft" },
+  { date: "15-11-2023", status: "scheduled" },
+  { date: "16-11-2023", status: "in-progress" },
+  { date: "17-11-2023", status: "in-progress" },
+  { date: "18-11-2023", status: "scheduled" },
+  { date: "19-11-2023", status: "scheduled" },
+  { date: "20-11-2023", status: "scheduled" },
+  { date: "21-11-2023", status: "in-progress" },
+  { date: "22-11-2023", status: "scheduled" },
+  { date: "23-11-2023", status: "error" },
+  { date: "24-11-2023", status: "draft" },
+  { date: "25-11-2023", status: "draft" },
+  { date: "26-11-2023", status: "scheduled" },
+  { date: "27-11-2023", status: "in-progress" },
+  { date: "28-11-2023", status: "error" },
+  { date: "29-11-2023", status: "error" },
+  { date: "30-11-2023", status: "scheduled" },
+];
 
 export default function PublishingScheduler() {
   const [sidebarStatus, setSidebarStatus] = useState(true);
+  const [filterPostIsShown, setFilterPostIsShown] = useState(false);
 
   const [refresherState, setRefresherState] = useState(false);
   const [selectedDateValue, setSelectedDateValue] = useState("");
+
+  const [selectedFilter, setselectedFilter] = useState({
+    status: "",
+    contentType: "",
+    channel: "",
+    assignedUser: "",
+  });
 
   const currentMonth = useRef(0);
   const currentYear = useRef(0);
@@ -35,38 +74,9 @@ export default function PublishingScheduler() {
 
   let date = new Date();
 
-  const dummyData = [
-    { date: "5-10-2023", status: "published" },
-    { date: "6-10-2023", status: "published" },
-    { date: "7-10-2023", status: "error" },
-    { date: "8-10-2023", status: "error" },
-    { date: "9-10-2023", status: "error" },
-    { date: "10-10-2023", status: "draft" },
-    { date: "11-10-2023", status: "draft" },
-    { date: "12-10-2023", status: "draft" },
-    { date: "13-10-2023", status: "draft" },
-    { date: "14-10-2023", status: "draft" },
-    { date: "15-10-2023", status: "scheduled" },
-    { date: "16-10-2023", status: "in-progress" },
-    { date: "17-10-2023", status: "in-progress" },
-    { date: "18-10-2023", status: "scheduled" },
-    { date: "19-10-2023", status: "scheduled" },
-    { date: "20-10-2023", status: "scheduled" },
-    { date: "21-10-2023", status: "in-progress" },
-    { date: "22-10-2023", status: "scheduled" },
-    { date: "23-10-2023", status: "error" },
-    { date: "24-10-2023", status: "draft" },
-    { date: "25-10-2023", status: "draft" },
-    { date: "26-10-2023", status: "scheduled" },
-    { date: "27-10-2023", status: "in-progress" },
-    { date: "28-10-2023", status: "error" },
-    { date: "29-10-2023", status: "error" },
-    { date: "30-10-2023", status: "scheduled" },
-    { date: "31-10-2023", status: "draft" },
-  ];
+  const dummyDataHolder = useRef([{ date: "", status: "" }]);
 
   useEffect(() => {
-    setRefresherState(!refresherState);
     if (date) {
       currentMonth.current = date.getMonth();
       currentYear.current = date.getFullYear();
@@ -92,8 +102,30 @@ export default function PublishingScheduler() {
           dateStatusCount.current.error += 1;
         }
       });
+      dummyDataHolder.current = dummyData;
+
+      setRefresherState(!refresherState);
     }
   }, []);
+
+  useEffect(() => {
+    if (selectedFilter.status !== "") {
+      dummyDataHolder.current = [];
+
+      dummyData.forEach((data) => {
+        if (data.status === selectedFilter.status) {
+          dummyDataHolder.current.push(data);
+        }
+      });
+    } else {
+      dummyDataHolder.current = dummyData;
+    }
+
+    setRefresherState(!refresherState);
+  }, [selectedFilter.status]);
+
+  console.log(dummyData);
+  console.log(dummyDataHolder);
 
   const months = [
     "January",
@@ -128,6 +160,18 @@ export default function PublishingScheduler() {
       date = new Date(); // pass the current date as date value
     }
     setRefresherState(!refresherState);
+  };
+
+  const handleFilterByStatus = (statusType: string) => {
+    if (selectedFilter.status === statusType) {
+      setselectedFilter((prevValue) => {
+        return { ...prevValue, status: "" };
+      });
+    } else {
+      setselectedFilter((prevValue) => {
+        return { ...prevValue, status: statusType };
+      });
+    }
   };
 
   return (
@@ -178,6 +222,7 @@ export default function PublishingScheduler() {
                 <button
                   type="button"
                   className="rounded-[50%] bg-[#2C2C2C] p-2 transition duration-300 hover:bg-[#7B46DE]"
+                  onClick={() => setFilterPostIsShown(!filterPostIsShown)}
                 >
                   <TuneIcon className="mt-[-3px] h-[20px] w-[24px]" />
                 </button>
@@ -196,59 +241,15 @@ export default function PublishingScheduler() {
               </div>
             </div>
 
-            <div className="flex flex-row items-center justify-evenly gap-x-3 border-t border-[#828181] p-5">
-              <select className=" w-full cursor-pointer rounded-md border border-[#828181] bg-[#2C2C2C] px-4 py-2 font-poppins text-[14px] text-white">
-                <option disabled selected hidden>
-                  Status
-                </option>
-                <option>Draft</option>
-                <option>Scheduled</option>
-                <option>In Progress</option>
-                <option>Published</option>
-                <option>Error</option>
-              </select>
-
-              <select className=" w-full cursor-pointer rounded-md border border-[#828181] bg-[#2C2C2C] px-4 py-2 font-poppins text-[14px] text-white">
-                <option disabled selected hidden>
-                  Content Type
-                </option>
-                <option>Image</option>
-                <option>Video</option>
-              </select>
-
-              <select className=" w-full cursor-pointer rounded-md border border-[#828181] bg-[#2C2C2C] px-4 py-2 font-poppins text-[14px] text-white">
-                <option disabled selected hidden>
-                  Channels
-                </option>
-                <option>Facebook</option>
-                <option>Instagram</option>
-                <option>Discord</option>
-                <option>Linkedin</option>
-              </select>
-
-              <select className=" w-full cursor-pointer rounded-md border border-[#828181] bg-[#2C2C2C] px-4 py-2 font-poppins text-[14px] text-white">
-                <option disabled selected hidden>
-                  Assigned Users
-                </option>
-                <option>John Doe</option>
-              </select>
-
-              <button
-                type="button"
-                className="flex min-h-[40px] min-w-[40px] items-center justify-center rounded-md bg-[#7B46DE]"
-              >
-                <Image
-                  src="/svg/publishing/scheduler/arrow-head-right.svg"
-                  alt="instagram logo"
-                  width={18}
-                  height={18}
-                />
-              </button>
-            </div>
+            <FilterPostsMenu
+              isDisplayed={filterPostIsShown}
+              selectedFilter={selectedFilter.status}
+              setselectedFilter={setselectedFilter}
+            />
 
             <CalendarBody
               date={date}
-              dummyData={dummyData}
+              dummyData={dummyDataHolder.current}
               currentYear={currentYear.current}
               currentMonth={currentMonth.current}
               selectedDateValue={selectedDateValue}
@@ -259,6 +260,7 @@ export default function PublishingScheduler() {
               <button
                 type="button"
                 className=" w-full border border-b-0 border-l-0 border-[#828181]"
+                onClick={() => handleFilterByStatus("draft")}
               >
                 <div className="flex flex-row items-center border-b-4 border-[#D1D3E0] p-2">
                   <span className="w-full text-[12px]">Draft</span>
@@ -270,6 +272,7 @@ export default function PublishingScheduler() {
               <button
                 type="button"
                 className=" w-full border border-b-0 border-l-0 border-[#828181]"
+                onClick={() => handleFilterByStatus("scheduled")}
               >
                 <div className="flex flex-row items-center border-b-4 border-[#DEB83B] p-2">
                   <span className="w-full text-[12px]">Scheduled</span>
@@ -281,6 +284,7 @@ export default function PublishingScheduler() {
               <button
                 type="button"
                 className=" w-full border border-b-0 border-l-0 border-[#828181]"
+                onClick={() => handleFilterByStatus("in-progress")}
               >
                 <div className="flex flex-row items-center border-b-4 border-[#6887FF] p-2">
                   <span className="w-full text-[12px]">In Progress</span>
@@ -292,6 +296,7 @@ export default function PublishingScheduler() {
               <button
                 type="button"
                 className=" w-full border border-b-0 border-l-0 border-[#828181]"
+                onClick={() => handleFilterByStatus("published")}
               >
                 <div className="flex flex-row items-center border-b-4 border-[#6CC788] p-2">
                   <span className="w-full text-[12px]">Published</span>
@@ -303,6 +308,7 @@ export default function PublishingScheduler() {
               <button
                 type="button"
                 className=" w-full border-t border-[#828181]"
+                onClick={() => handleFilterByStatus("error")}
               >
                 <div className="flex flex-row items-center border-b-4 border-[#FF5653] p-2">
                   <span className="w-full text-[12px]">Error</span>

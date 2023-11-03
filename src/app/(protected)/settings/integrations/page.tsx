@@ -67,6 +67,8 @@ export default function SettingsIntegrations() {
                   </form>
 
                   <button
+                    type="button"
+                    aria-label="refreshbutton"
                     className="rounded-md border border-[#C0C0C0] bg-[#2C2C2C] p-2 hover:bg-[#7B46DE]"
                     onClick={() => {}}
                   >

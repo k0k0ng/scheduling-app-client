@@ -43,11 +43,11 @@ export default function SettingsIntegrations() {
                     size="md"
                     onClick={() => {}}
                     iconLeft={<AddOutlinedIcon />}
-                    spanClassName="ml-2.5 hidden md:flex"
+                    spanClassName="ml-2 hidden md:flex"
                   >
                     App
                   </Button>
-                  {/*  */}
+
                   <form
                     action="/dashboard"
                     autoComplete="off"
@@ -67,7 +67,6 @@ export default function SettingsIntegrations() {
                       className="w-full"
                     />
                   </form>
-
                   <button
                     type="button"
                     aria-label="refreshbutton"

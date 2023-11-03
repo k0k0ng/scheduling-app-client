@@ -53,12 +53,14 @@ export default function CalendarDate({
       <div className="flex items-start justify-between">
         <div className="flex gap-x-1 px-2 py-1">
           <button
+            aria-label="stickynotebutton"
             type="button"
             className="rounded-[50%] bg-[#2C2C2C] p-2 transition duration-300 hover:bg-[#7B46DE]"
           >
             <StickyNote2OutlinedIcon className="h-[20px] w-[20px]" />
           </button>
           <button
+            aria-label="flagbutton"
             type="button"
             className="rounded-[50%] bg-[#2C2C2C] p-2 transition duration-300 hover:bg-[#7B46DE]"
           >

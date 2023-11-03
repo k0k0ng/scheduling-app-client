@@ -8,7 +8,11 @@ export default function TopNav({ title }: any) {
     <nav className=" pl- flex min-h-[4.75rem] w-full flex-row items-center justify-between border-b-[1px] border-slate-700 pl-8 pr-6 xl:pl-10 xl:pr-10 2xl:pr-20">
       <p className="font-poppins text-[18px] font-semibold">{title}</p>
       <div className="flex flex-row gap-x-4">
-        <button type="button" className="hidden md:block">
+        <button
+          type="button"
+          className="hidden md:block"
+          aria-label="notification"
+        >
           <NotificationsNoneIcon />
         </button>
 
@@ -18,7 +22,7 @@ export default function TopNav({ title }: any) {
           <option className="bg-[#8844DA] p-2 text-center">EU</option>
         </select>
 
-        <button type="button" className="hidden md:block">
+        <button type="button" className="hidden md:block" aria-label="campaign">
           <CampaignIcon />
         </button>
 
@@ -32,7 +36,11 @@ export default function TopNav({ title }: any) {
           <MenuIcon />
         </button> */}
 
-        <button type="button" className="ml-2 flex items-center">
+        <button
+          type="button"
+          className="ml-2 flex items-center"
+          aria-label="accountcircle"
+        >
           <AccountCircleIcon className="h-[45px] w-[45px]" />
         </button>
       </div>

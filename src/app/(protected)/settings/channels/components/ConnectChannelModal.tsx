@@ -17,6 +17,7 @@ export default function ConnectChannelModal() {
         className="search-form mx-10 mt-6 flex min-h-[45px]  flex-row rounded-md border border-[#C0C0C0] px-4 transition duration-300 lg:min-w-[100px]"
       >
         <button
+          aria-label="searchsubmit"
           type="submit"
           className="mr-4 text-white transition duration-300 hover:text-[#7B46DE]"
         >

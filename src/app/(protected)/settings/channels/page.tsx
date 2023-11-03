@@ -142,6 +142,7 @@ export default function SettingsChannels() {
               className="search-form flex min-h-[45px] min-w-full flex-row rounded-md border border-[#C0C0C0] px-4 transition duration-300 lg:min-w-[100px]"
             >
               <button
+                aria-label="searchbutton"
                 type="submit"
                 className="mr-4 transition duration-300 hover:text-[#7B46DE]"
               >
@@ -161,7 +162,7 @@ export default function SettingsChannels() {
                   <th className="col-span-1 pb-5 text-center font-poppins text-[18px] font-semibold">
                     RENEWAL AT
                   </th>
-                  <th className="col-span-1 pb-5">
+                  <th className="col-span-1 pb-5" aria-label="renewal">
                     <div className="flex items-center justify-center gap-x-8">
                       <QuestionAnswerOutlinedIcon />
                       <InsertChartOutlinedRoundedIcon />
@@ -227,6 +228,7 @@ export default function SettingsChannels() {
                   <td className="pb-5 pt-8">
                     <div className="flex flex-row justify-center gap-x-4">
                       <button
+                        aria-label="lightningbutton"
                         type="button"
                         className="rounded bg-[#2C2C2C] p-2 transition duration-300 hover:bg-[#7B46DE]"
                       >
@@ -239,6 +241,7 @@ export default function SettingsChannels() {
                       </button>
 
                       <button
+                        aria-label="deletebutton"
                         type="button"
                         className="rounded bg-[#2C2C2C] p-2 transition duration-300 hover:bg-[#7B46DE]"
                       >
@@ -259,6 +262,7 @@ export default function SettingsChannels() {
           <ConnectChannelModal />
 
           <button
+            aria-label="closebutton"
             type="button"
             onClick={handleCloseConnectChannelModal}
             className="absolute right-[-18px] top-[-18px] flex h-[32px] w-[34px] items-center justify-center rounded-[50%] bg-[#F47674EB] font-poppins text-white transition duration-300 hover:bg-[#f4605eeb]"

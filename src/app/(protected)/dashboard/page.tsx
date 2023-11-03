@@ -62,6 +62,7 @@ export default function Dashboard() {
               className="search-form flex min-w-full flex-row rounded-md border border-[#C0C0C0] px-4 transition duration-300 lg:min-w-[100px]"
             >
               <button
+                aria-label="search-submit"
                 type="submit"
                 className="mr-4 transition duration-300 hover:text-[#7B46DE]"
               >

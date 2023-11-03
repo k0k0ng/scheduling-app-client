@@ -131,6 +131,7 @@ export default function SideBar({
             {/* web sidebar toggle */}
             <div className="absolute -bottom-10 -right-4 h-14 w-auto scale-0 md:scale-90">
               <button
+                aria-label="websidebartoggle"
                 type="button"
                 className="rounded-mg cursor-pointer rounded-lg border border-solid border-[#5C5F65] bg-[#161A23] p-1.5"
                 onClick={() => {
@@ -318,7 +319,7 @@ export default function SideBar({
           <div className="absolute bottom-0 h-20 w-full bg-[#2D2F39]">
             <div
               className={`${
-                sidebarIsOpen ? "mx-8" : "mx-2.5"
+                sidebarIsOpen ? "mx-8" : "mx-4"
               } mx-8 my-4 flex  rounded-md bg-[#202020] p-2`}
             >
               <button

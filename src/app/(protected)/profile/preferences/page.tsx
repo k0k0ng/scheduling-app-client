@@ -68,7 +68,7 @@ export default function ProfilePreferences() {
                   </div>
                   <div className="mb-6">
                     <label
-                      className="mb-2 block text-xs font-normal tracking-wide text-white"
+                      className="mb-2 block text-sm font-normal tracking-wide text-white"
                       htmlFor="dateformat"
                     >
                       Date Format
@@ -87,7 +87,7 @@ export default function ProfilePreferences() {
                   </div>
                   <div className="mb-6">
                     <label
-                      className="mb-2 block text-xs font-normal tracking-wide text-white"
+                      className="mb-2 block text-sm font-normal tracking-wide text-white"
                       htmlFor="timeformat"
                     >
                       Time Format
@@ -112,7 +112,7 @@ export default function ProfilePreferences() {
                   {/*  */}
                   <div className="mb-6">
                     <label
-                      className="mb-2 block text-xs font-normal tracking-wide text-white"
+                      className="mb-2 block text-sm font-normal tracking-wide text-white"
                       htmlFor="headerclock"
                     >
                       Top Header Clock

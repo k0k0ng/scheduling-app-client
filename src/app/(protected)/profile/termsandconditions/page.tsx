@@ -36,7 +36,7 @@ export default function ProfileTermsAndCondition() {
                   <div className="block lg:flex">
                     <div className="w-full">
                       <div className="mb-6 w-full">
-                        <p className="flex justify-start text-sm">
+                        <p className="flex justify-start text-base font-semibold">
                           Terms and Condition
                         </p>
                       </div>

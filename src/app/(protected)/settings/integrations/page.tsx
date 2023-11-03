@@ -35,16 +35,17 @@ export default function SettingsIntegrations() {
           </p>
           <div className="min-h-[80vh] rounded bg-[#202020]">
             <div className="justify-start md:justify-center ">
-              <div className="w-full p-4  md:p-6 lg:p-12">
+              <div className="w-full p-8 md:p-6 lg:p-12">
                 <div className="flex w-full justify-between border-b border-[#2C2C2C] pb-6 md:border-none ">
                   <Button
                     className="button--"
                     type="primary"
-                    size="sm"
+                    size="md"
                     onClick={() => {}}
+                    iconLeft={<AddOutlinedIcon />}
+                    spanClassName="ml-2.5 hidden md:flex"
                   >
-                    <AddOutlinedIcon fontSize="small" />
-                    <span className="ml-2.5 hidden md:flex">Add</span>
+                    App
                   </Button>
                   <form
                     action="/dashboard"
@@ -91,7 +92,7 @@ export default function SettingsIntegrations() {
                     Add an Integration
                   </h1>
                   <p className="mb-6 text-[12px] md:mb-3 md:text-[16px]">
-                    Would you like to add your first
+                    Would you like to add your first {"\t"}
                     <span className="block md:inline-flex">
                       integration now?
                     </span>

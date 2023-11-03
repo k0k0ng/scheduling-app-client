@@ -21,7 +21,7 @@ export default function Password({ value, onChange, id, labelTitle }: any) {
 
   return (
     <label
-      className=" mb-2 block text-xs font-normal tracking-wide text-white"
+      className=" mb-2 block text-sm font-normal tracking-wide text-white"
       htmlFor={id}
     >
       {labelTitle}

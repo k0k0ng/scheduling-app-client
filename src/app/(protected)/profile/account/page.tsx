@@ -75,7 +75,7 @@ export default function ProfileAccount() {
                       <div className="md:flex md:flex-wrap">
                         <div className="mb-6 w-full md:p-1 lg:w-1/2">
                           <label
-                            className="block text-xs font-normal tracking-wide text-white"
+                            className="block text-sm font-normal tracking-wide text-white"
                             htmlFor="firstName"
                           >
                             First Name
@@ -89,7 +89,7 @@ export default function ProfileAccount() {
                         </div>
                         <div className="mb-6 w-full md:p-1 lg:w-1/2">
                           <label
-                            className="block text-xs font-normal tracking-wide text-white"
+                            className="block text-sm font-normal tracking-wide text-white"
                             htmlFor="lastName"
                           >
                             Last Name
@@ -105,7 +105,7 @@ export default function ProfileAccount() {
 
                       <div className="mb-6 md:p-1">
                         <label
-                          className="mb-2 block text-xs font-normal tracking-wide text-white"
+                          className="mb-2 block text-sm font-normal tracking-wide text-white"
                           htmlFor="emailAddress"
                         >
                           Email Address
@@ -119,13 +119,13 @@ export default function ProfileAccount() {
                       </div>
                       <div className="mb-6 md:p-1">
                         <label
-                          className="mb-2 block text-xs font-normal tracking-wide text-white"
+                          className="mb-2 block text-sm font-normal tracking-wide text-white"
                           htmlFor="mobileNumber"
                         >
                           Mobile Number
                           <div className="flex">
                             <div className="inset-y-0 my-2 flex items-center border-r bg-[#2C2C2C] px-3 py-3 text-gray-200">
-                              <span className="text-[14px] text-[#c0c0c0]">
+                              <span className="text-sm text-[#c0c0c0]">
                                 {countryMobileStatus}
                               </span>
                             </div>

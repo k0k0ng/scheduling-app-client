@@ -47,6 +47,7 @@ export default function SettingsIntegrations() {
                   >
                     App
                   </Button>
+                  {/*  */}
                   <form
                     action="/dashboard"
                     autoComplete="off"

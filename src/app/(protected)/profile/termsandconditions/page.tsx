@@ -31,15 +31,15 @@ export default function ProfileTermsAndCondition() {
             {/* set forms full and font poppins */}
             <form className="w-full font-poppins">
               {/* mobile spacing */}
-              <div className="p-8 md:mx-12 md:my-12 md:p-0 lg:p-12">
-                <div className="mb-6">
+              <div className="flex justify-start md:justify-center ">
+                <div className="p-8 md:mx-12 md:my-12 md:p-0 lg:p-12">
                   <div className="block lg:flex">
-                    <div className="mb-6 w-full">
-                      <p className="flex justify-start text-sm">
-                        Terms and Condition
-                      </p>
-                    </div>
                     <div className="w-full">
+                      <div className="mb-6 w-full">
+                        <p className="flex justify-start text-sm">
+                          Terms and Condition
+                        </p>
+                      </div>
                       <div className="mb-6">
                         <label
                           htmlFor="term1"
@@ -91,13 +91,13 @@ export default function ProfileTermsAndCondition() {
                           </span>
                         </label>
                       </div>
+                      <div className="mb-6 grid justify-items-end">
+                        <Button size="sm" type="primary" className="button--">
+                          Save Changes
+                        </Button>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="mb-6 grid justify-items-end">
-                  <Button size="sm" type="primary" className="button--">
-                    Save Changes
-                  </Button>
                 </div>
               </div>
             </form>

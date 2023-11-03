@@ -107,6 +107,7 @@ export default function CalendarViewFilterMenu() {
   return (
     <div className="relative">
       <button
+        aria-label="togglecalendar"
         type="button"
         className="rounded-[50%] bg-[#2C2C2C] p-2 transition duration-300 hover:bg-[#7B46DE]"
         onClick={handleToggleCalendarViewFilter}

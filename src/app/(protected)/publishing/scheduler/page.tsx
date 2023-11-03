@@ -182,7 +182,7 @@ export default function PublishingScheduler() {
       />
       <div
         className={`${
-          sidebarStatus ? "ml-64" : "ml-20"
+          sidebarStatus ? "md:ml-64" : "md:ml-20"
         } min-h-[100vh] w-full pb-28`}
       >
         <TopNav title="Publishing" />
@@ -196,6 +196,7 @@ export default function PublishingScheduler() {
                 </p>
                 <div className="icons flex flex-row items-start justify-center">
                   <button
+                    aria-label="prevbutton"
                     type="button"
                     id="prev"
                     onClick={() => handlePrevOrNext(true)}
@@ -206,6 +207,7 @@ export default function PublishingScheduler() {
                     />
                   </button>
                   <button
+                    aria-label="nextbutton"
                     type="button"
                     id="next"
                     onClick={() => handlePrevOrNext(false)}
@@ -220,6 +222,7 @@ export default function PublishingScheduler() {
 
               <div className="flex gap-x-2">
                 <button
+                  aria-label="filterbutton"
                   type="button"
                   className="rounded-[50%] bg-[#2C2C2C] p-2 transition duration-300 hover:bg-[#7B46DE]"
                   onClick={() => setFilterPostIsShown(!filterPostIsShown)}

@@ -34,41 +34,43 @@ export default function ProfileChangePassword() {
 
           <div className="min-h-[80vh] rounded bg-[#202020] md:flex">
             <form className="w-full font-poppins">
-              <div className="p-8 md:mx-16 md:my-12 md:p-0 lg:p-12">
-                <div className="mb-6">
-                  <Password
-                    labelTitle="Current Password"
-                    id="currentpass"
-                    value={currentPassword}
-                    onChange={(e: any) => {
-                      setCurrentPassword(e.target.value);
-                    }}
-                  />
-                </div>
-                <div className="mb-6">
-                  <Password
-                    labelTitle="New Password"
-                    id="newpass"
-                    value={newPassword}
-                    onChange={(e: any) => {
-                      setNewPassword(e.target.value);
-                    }}
-                  />
-                </div>
-                <div className="mb-6">
-                  <Password
-                    labelTitle="Confirm New Password"
-                    id="confirmpassword"
-                    value={confirmNewPassword}
-                    onChange={(e: any) => {
-                      setConfirmNewPassword(e.target.value);
-                    }}
-                  />
-                </div>
-                <div className="mb-6 grid justify-items-end">
-                  <Button size="sm" type="primary" className="button--">
-                    Save Changes
-                  </Button>
+              <div className="flex justify-start md:justify-center">
+                <div className="w-full p-8 md:mx-16 md:my-12 md:w-3/4 md:p-0 lg:p-12">
+                  <div className="mb-6">
+                    <Password
+                      labelTitle="Current Password"
+                      id="currentpass"
+                      value={currentPassword}
+                      onChange={(e: any) => {
+                        setCurrentPassword(e.target.value);
+                      }}
+                    />
+                  </div>
+                  <div className="mb-6">
+                    <Password
+                      labelTitle="New Password"
+                      id="newpass"
+                      value={newPassword}
+                      onChange={(e: any) => {
+                        setNewPassword(e.target.value);
+                      }}
+                    />
+                  </div>
+                  <div className="mb-6">
+                    <Password
+                      labelTitle="Confirm New Password"
+                      id="confirmpassword"
+                      value={confirmNewPassword}
+                      onChange={(e: any) => {
+                        setConfirmNewPassword(e.target.value);
+                      }}
+                    />
+                  </div>
+                  <div className="mb-6 grid justify-items-end">
+                    <Button size="sm" type="primary" className="button--">
+                      Save Changes
+                    </Button>
+                  </div>
                 </div>
               </div>
             </form>

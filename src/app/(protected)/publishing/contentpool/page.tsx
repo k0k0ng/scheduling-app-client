@@ -16,7 +16,7 @@ export default function PublishingContentPool() {
       />
       <div
         className={`${
-          sidebarStatus ? "ml-64" : "ml-20"
+          sidebarStatus ? "md:ml-64" : "md:ml-20"
         } min-h-[100vh] w-full pb-28`}
       >
         <TopNav title="Publishing" />

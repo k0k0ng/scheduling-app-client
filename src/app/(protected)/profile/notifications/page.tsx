@@ -5,6 +5,7 @@ import { useState } from "react";
 import SideBar from "@/components/Sidebar";
 import TopNav from "@/components/TopNav";
 import Button from "@/components/Button/Button";
+import Select from "@/components/SelectOption/page";
 
 export default function ProfileNotification() {
   const [sidebarStatus, setSidebarStatus] = useState(true);
@@ -29,28 +30,33 @@ export default function ProfileNotification() {
 
           <div className="min-h-[80vh] rounded bg-[#202020] md:flex">
             <form className="w-full font-poppins">
-              <div className="p-8 md:mx-16 md:my-12 md:p-0 lg:p-12">
-                <div className="mb-6">
-                  <label
-                    htmlFor="language"
-                    className="mb-2 block text-xs font-normal tracking-wide text-white"
-                  >
-                    Notifications
-                    <select
-                      id="language"
-                      className="my-2 block w-full rounded border border-gray-200 bg-[#2C2C2C] px-4 py-3 leading-tight text-gray-200 focus:border-gray-500 focus:bg-[#2C2C2C] focus:outline-none"
-                      defaultValue="onceaweek"
-                    >
-                      <option value="onceaweek">Once a week</option>
-                      <option>Twice a week</option>
-                      <option>Thrice a week</option>
-                    </select>
-                  </label>
-                </div>
-                <div className="mb-6 grid justify-items-end">
-                  <Button size="sm" type="primary" className="button--">
-                    Save Changes
-                  </Button>
+              <div className="flex justify-start md:justify-center">
+                <div className="w-full p-8 md:mx-16 md:my-12 md:w-3/4 md:p-0 lg:p-12">
+                  <div className="mb-6">
+                    <Select
+                      labelName="Notifications"
+                      parentOption="Once a week"
+                      childOption={[
+                        "Once a week",
+                        "Twice a week",
+                        "Thrice a week",
+                        "Large",
+                        "Small",
+                        "Big",
+                        "Once a week",
+                        "Twice a week",
+                        "Thrice a week",
+                        "Large",
+                        "Small",
+                        "Big",
+                      ]}
+                    />
+                  </div>
+                  <div className="mb-6 grid justify-items-end">
+                    <Button size="sm" type="primary" className="button--">
+                      Save Changes
+                    </Button>
+                  </div>
                 </div>
               </div>
             </form>

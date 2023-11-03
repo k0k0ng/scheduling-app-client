@@ -319,7 +319,7 @@ export default function SideBar({
           <div className="absolute bottom-0 h-20 w-full bg-[#2D2F39]">
             <div
               className={`${
-                sidebarIsOpen ? "mx-8" : "mx-2.5"
+                sidebarIsOpen ? "mx-8" : "mx-4"
               } mx-8 my-4 flex  rounded-md bg-[#202020] p-2`}
             >
               <button

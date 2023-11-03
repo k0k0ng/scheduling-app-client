@@ -11,6 +11,8 @@ import TopCardButton from "./components/TopCardButton";
 
 import AnalyticsOverview from "./components/AnalyticsOverview";
 
+import "./style.css";
+
 export default function Dashboard() {
   const router = useRouter();
   const [sidebarStatus, setSidebarStatus] = useState(true);
@@ -99,15 +101,20 @@ export default function Dashboard() {
             />
           </div>
 
-          <div className="mt-10 grid grid-cols-3 items-start gap-8 lg:grid-cols-6">
+          <div className="mt-10 grid grid-cols-3 items-start gap-8 font-poppins lg:grid-cols-6">
             <div className="col-span-3 min-h-[550px] rounded bg-[#202020] p-10 xl:col-span-2">
               <h5 className="text-[18px] font-semibold">Task Board</h5>
-              <div className="mt-2 text-[12px]">
+              <div className="mt-1 text-[12px]">
                 Summary of your active boards
               </div>
-              <div className="mt-4 min-h-[180px] w-full rounded bg-[#FFF]" />
-              <div className="mt-4 min-h-[180px] w-full rounded bg-[#FFF]" />
-              <div className="mt-4 min-h-[180px] w-full rounded bg-[#FFF]" />
+              <div className="mt-4 flex min-h-[28rem] w-full flex-col items-center justify-center gap-1">
+                <span className="mt-[-5rem] text-[18px] font-semibold">
+                  No Records Yet
+                </span>
+                <span className="text-[12px]">
+                  You do not have any active tasks yet.
+                </span>
+              </div>
             </div>
 
             <AnalyticsOverview />

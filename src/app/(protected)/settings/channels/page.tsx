@@ -10,13 +10,18 @@ import SideBar from "@/components/Sidebar";
 import TopNav from "@/components/TopNav";
 
 import SearchIcon from "@mui/icons-material/Search";
-
+import CloseIcon from "@mui/icons-material/Close";
 import QuestionAnswerOutlinedIcon from "@mui/icons-material/QuestionAnswerOutlined";
 import InsertChartOutlinedRoundedIcon from "@mui/icons-material/InsertChartOutlinedRounded";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
+import InsightsIcon from "@mui/icons-material/Insights";
 
 import DoDisturbAltIcon from "@mui/icons-material/DoDisturbAlt";
 import DeleteIcon from "@mui/icons-material/Delete";
+
+import ConnectChannelModal from "./components/ConnectChannelModal";
+
+import "./style.css";
 
 export default function SettingsChannels() {
   const [sidebarStatus, setSidebarStatus] = useState(true);
@@ -77,7 +82,7 @@ export default function SettingsChannels() {
       >
         <TopNav title="Channels" />
 
-        <main className="ml-10 mr-20 mt-8 min-h-[80vh] min-w-[20rem]  rounded-md bg-[#202020] px-10 py-8">
+        <main className="ml-10 mr-20 mt-8 min-h-[80vh] min-w-[20rem] rounded-md bg-[#202020] px-10 py-8">
           <div className="flex flex-col items-start justify-between gap-y-4 border-b border-[#2C2C2C] pb-8 lg:flex-row lg:items-center">
             <div className="flex flex-row items-start justify-start gap-x-4">
               <button
@@ -161,7 +166,7 @@ export default function SettingsChannels() {
                       <QuestionAnswerOutlinedIcon />
                       <InsertChartOutlinedRoundedIcon />
                       <CalendarTodayOutlinedIcon />
-                      <QuestionAnswerOutlinedIcon />
+                      <InsightsIcon />
                     </div>
                   </th>
                   <th className="col-span-1 pb-5 text-center font-poppins text-[18px] font-semibold">
@@ -249,64 +254,17 @@ export default function SettingsChannels() {
 
         <dialog
           ref={connectChannelModal}
-          className="connect-channel-dialog min-w-[100vw] rounded-lg bg-[#2C2C2C] py-10 md:min-w-[90vw] lg:min-w-[60vw]"
+          className="connect-channel-dialog min-w-[100vw] overflow-visible rounded-lg bg-[#202020] py-10 lg:min-w-[80vw] xl:min-w-[60vw] 2xl:min-w-[40vw]"
         >
-          <div>
-            <div className="flex flex-row items-center justify-between border-b border-[#717171] px-10 pb-6">
-              <span className="font-bold text-white">Connect</span>
-              <button
-                type="button"
-                onClick={handleCloseConnectChannelModal}
-                className=" rounded-[50%] bg-[#717171] px-3 py-1 font-extrabold text-white transition duration-300 hover:bg-[#7B46DE]"
-              >
-                x
-              </button>
-            </div>
-            <form
-              action="/dashboard"
-              autoComplete="off"
-              className="search-form mx-10 mt-6 flex min-h-[45px]  flex-row rounded-md border border-[#C0C0C0] px-4 transition duration-300 lg:min-w-[100px]"
-            >
-              <button
-                type="submit"
-                className="mr-4 text-white transition duration-300 hover:text-[#7B46DE]"
-              >
-                <SearchIcon />
-              </button>
-              <input type="text" placeholder="Search anything" name="search" />
-            </form>
+          <ConnectChannelModal />
 
-            <div className="mx-10 mt-6 grid h-[50vh] grid-cols-2 items-start justify-start gap-6 overflow-y-scroll p-4 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-              <div className="col-span-1 min-h-[10rem] rounded bg-slate-400 transition duration-300 hover:bg-[#7B46DE]" />
-              <div className="col-span-1 min-h-[10rem] rounded bg-slate-400 transition duration-300 hover:bg-[#7B46DE]" />
-              <div className="col-span-1 min-h-[10rem] rounded bg-slate-400 transition duration-300 hover:bg-[#7B46DE]" />
-              <div className="col-span-1 min-h-[10rem] rounded bg-slate-400 transition duration-300 hover:bg-[#7B46DE]" />
-              <div className="col-span-1 min-h-[10rem] rounded bg-slate-400 transition duration-300 hover:bg-[#7B46DE]" />
-              <div className="col-span-1 min-h-[10rem] rounded bg-slate-400 transition duration-300 hover:bg-[#7B46DE]" />
-              <div className="col-span-1 min-h-[10rem] rounded bg-slate-400 transition duration-300 hover:bg-[#7B46DE]" />
-              <div className="col-span-1 min-h-[10rem] rounded bg-slate-400 transition duration-300 hover:bg-[#7B46DE]" />
-              <div className="col-span-1 min-h-[10rem] rounded bg-slate-400 transition duration-300 hover:bg-[#7B46DE]" />
-              <div className="col-span-1 min-h-[10rem] rounded bg-slate-400 transition duration-300 hover:bg-[#7B46DE]" />
-              <div className="col-span-1 min-h-[10rem] rounded bg-slate-400 transition duration-300 hover:bg-[#7B46DE]" />
-              <div className="col-span-1 min-h-[10rem] rounded bg-slate-400 transition duration-300 hover:bg-[#7B46DE]" />
-              <div className="col-span-1 min-h-[10rem] rounded bg-slate-400 transition duration-300 hover:bg-[#7B46DE]" />
-              <div className="col-span-1 min-h-[10rem] rounded bg-slate-400 transition duration-300 hover:bg-[#7B46DE]" />
-              <div className="col-span-1 min-h-[10rem] rounded bg-slate-400 transition duration-300 hover:bg-[#7B46DE]" />
-              <div className="col-span-1 min-h-[10rem] rounded bg-slate-400 transition duration-300 hover:bg-[#7B46DE]" />
-              <div className="col-span-1 min-h-[10rem] rounded bg-slate-400 transition duration-300 hover:bg-[#7B46DE]" />
-              <div className="col-span-1 min-h-[10rem] rounded bg-slate-400 transition duration-300 hover:bg-[#7B46DE]" />
-            </div>
-
-            <div className="mt-12 flex flex-row items-center justify-end border-t border-[#717171] px-10 pt-6">
-              <button
-                type="button"
-                onClick={handleCloseConnectChannelModal}
-                className=" rounded-md bg-[#717171] px-4 py-2 text-[14px] font-semibold text-white transition duration-300 hover:bg-[#7B46DE]"
-              >
-                Close
-              </button>
-            </div>
-          </div>
+          <button
+            type="button"
+            onClick={handleCloseConnectChannelModal}
+            className="absolute right-[-18px] top-[-18px] flex h-[32px] w-[34px] items-center justify-center rounded-[50%] bg-[#F47674EB] font-poppins text-white transition duration-300 hover:bg-[#f4605eeb]"
+          >
+            <CloseIcon />
+          </button>
         </dialog>
       </div>
     </div>

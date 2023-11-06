@@ -35,45 +35,48 @@ export default function SettingsIntegrations() {
           </p>
           <div className="min-h-[80vh] rounded bg-[#202020]">
             <div className="justify-start md:justify-center ">
-              <div className="w-full p-4  md:p-6 lg:p-12">
-                <div className="flex w-full justify-between border-b border-[#2C2C2C] pb-6 md:border-none ">
+              <div className="w-full p-8 md:p-6 lg:p-12">
+                <div className="flex w-full justify-between border-b border-[#2C2C2C] pb-4 md:border-none ">
                   <Button
-                    className="button--"
+                    className="button-- px-2 py-2 text-xs md:px-3 md:text-sm"
                     type="primary"
-                    size="sm"
                     onClick={() => {}}
+                    iconLeft={
+                      <AddOutlinedIcon className="h-4 w-4 md:h-6 md:w-6" />
+                    }
+                    spanClassName="hidden md:flex ml-2"
                   >
-                    <AddOutlinedIcon fontSize="small" />
-                    <span className="ml-2.5 hidden md:flex">Add</span>
+                    App
                   </Button>
+
                   <form
                     action="/dashboard"
                     autoComplete="off"
-                    className="search-form flex w-7/12 flex-row rounded-md border border-[#C0C0C0] bg-[#2C2C2C] px-6 py-2 transition duration-300"
+                    className="search-form flex w-7/12 flex-row rounded-md border border-[#C0C0C0] bg-[#2C2C2C] transition duration-300"
                   >
-                    <button
-                      aria-label="search-submit"
-                      type="submit"
-                      className="mr-4 transition duration-300 hover:text-[#7B46DE]"
-                    >
-                      <SearchIcon />
-                    </button>
+                    <Button
+                      type="transparent"
+                      onClick={() => {}}
+                      className="flex justify-center px-2 py-2 transition  duration-300 hover:text-[#7B46DE] md:px-3"
+                      iconLeft={
+                        <SearchIcon className="h-4 w-4 md:h-6 md:w-6" />
+                      }
+                    />
                     <input
                       type="text"
                       placeholder="Search anything"
                       name="search"
-                      className="w-full"
+                      className="w-full px-0 text-xs md:px-2 md:text-sm"
                     />
                   </form>
-
-                  <button
-                    type="button"
-                    aria-label="refreshbutton"
-                    className="rounded-md border border-[#C0C0C0] bg-[#2C2C2C] p-2 hover:bg-[#7B46DE]"
+                  <Button
+                    type="transparent"
+                    className="button-- border-secondary px-2 py-2 text-xs md:px-3 md:text-sm"
+                    iconLeft={
+                      <CachedOutlinedIcon className="h-4 w-4 md:h-6 md:w-6" />
+                    }
                     onClick={() => {}}
-                  >
-                    <CachedOutlinedIcon fontSize="medium" />
-                  </button>
+                  />
                 </div>
               </div>
               <div className="flex justify-center py-24 md:py-20">
@@ -91,19 +94,20 @@ export default function SettingsIntegrations() {
                     Add an Integration
                   </h1>
                   <p className="mb-6 text-[12px] md:mb-3 md:text-[16px]">
-                    Would you like to add your first
+                    Would you like to add your first {"\t"}
                     <span className="block md:inline-flex">
                       integration now?
                     </span>
                   </p>
                   <Button
-                    className="button-- mt-6 px-6 md:px-20"
+                    className="button-- mt-6 px-2 md:px-20"
                     type="primary"
                     size="md"
                     onClick={() => {}}
+                    iconLeft={<AddOutlinedIcon className="h-4 md:h-6" />}
+                    spanClassName="ml-2"
                   >
-                    <AddOutlinedIcon fontSize="small" />
-                    <span className="ml-2.5">Add Integration</span>
+                    Add Integration
                   </Button>
                 </div>
               </div>

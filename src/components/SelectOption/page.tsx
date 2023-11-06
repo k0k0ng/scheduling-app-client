@@ -42,7 +42,7 @@ export default function Select({
     <div className="relative " ref={wrapperRef}>
       <label
         htmlFor="notifications"
-        className="mb-2 block text-xs font-medium tracking-wide text-white"
+        className="mb-2 block text-xs font-medium tracking-wide text-white md:text-sm"
       >
         {labelName}
         <ul

@@ -15,8 +15,6 @@ import "react-datepicker/dist/react-datepicker.css";
 export default function SettingsGeneral() {
   const [sidebarStatus, setSidebarStatus] = useState(true);
   const [startDate, setStartDate] = useState();
-  const [timeFormat, setTimeFormat] = useState();
-  const [headerClock, setHeaderClock] = useState();
 
   return (
     <div className="flex flex-row items-start">
@@ -72,7 +70,7 @@ export default function SettingsGeneral() {
                       className="mb-2 block text-xs font-normal tracking-wide text-white md:text-sm"
                       htmlFor="dateformat"
                     >
-                      Last Update By
+                      Last Update
                       <div className="customdatepickerwidth">
                         <DatePicker
                           id="dateformat"

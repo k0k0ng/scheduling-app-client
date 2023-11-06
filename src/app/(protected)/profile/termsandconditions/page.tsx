@@ -92,7 +92,7 @@ export default function ProfileTermsAndCondition() {
                         </label>
                       </div>
                       <div className="mb-6 grid justify-items-end">
-                        <Button size="sm" type="primary" className="button--">
+                        <Button size="md" type="primary" className="button--">
                           Save Changes
                         </Button>
                       </div>

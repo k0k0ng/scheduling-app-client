@@ -7,17 +7,21 @@ function Button({
   onClick,
   className,
   iconLeft,
+  iconRight,
+  iconOnly,
   spanClassName,
   children,
 }: any) {
-  const mergeclassName = `${className} px-3 px-2 sm:${buttonSize[size]} ${buttonType[type]}`;
+  const mergeclassName = `${className} ${buttonSize[size]} ${buttonType[type]}`;
 
   return (
     <button className={mergeclassName} onClick={onClick} type="button">
       {iconLeft}
-      <span className={`text-sm md:text-base ${spanClassName}`}>
+      <span className={` ${spanClassName}`}>
         {children}
+        {iconOnly}
       </span>
+      {iconRight}
     </button>
   );
 }

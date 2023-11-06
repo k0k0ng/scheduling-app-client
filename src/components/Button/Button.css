@@ -2,8 +2,6 @@
 .button-- {
   display: inline-flex;
   align-items: center;
-  font-style: normal;
-  font-weight: thin;
   text-align: center;
   transition:
     color 0.3s,
@@ -25,11 +23,12 @@
 /* secondary */
 .border-secondary {
   border: 1px solid;
-  border-color: rgb(59 130 246);
+  border-color: rgb(192, 192, 192);
 }
 
 .border-secondary:hover {
-  background-color: rgb(29 78 216);
+  border-color: rgb(123, 70, 222);
+  background-color: rgb(143, 95, 233);
 }
 
 /* success */

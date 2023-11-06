@@ -21,7 +21,7 @@ export default function Password({ value, onChange, id, labelTitle }: any) {
 
   return (
     <label
-      className=" mb-2 block text-sm font-normal tracking-wide text-white"
+      className=" mb-2 block text-xs font-normal tracking-wide text-white md:text-sm"
       htmlFor={id}
     >
       {labelTitle}
@@ -30,7 +30,7 @@ export default function Password({ value, onChange, id, labelTitle }: any) {
           type={type}
           id={id}
           placeholder="Password"
-          className="my-2 block w-full rounded border border-gray-200 bg-[#2C2C2C] px-4 py-3 leading-tight text-gray-200 focus:border-gray-500 focus:bg-[#828181] focus:outline-none"
+          className="my-2 block w-full rounded border border-gray-200 bg-[#2C2C2C] px-4 py-3 text-xs leading-tight text-gray-200 focus:border-gray-500 focus:bg-[#828181] focus:outline-none md:text-sm"
           value={value}
           onChange={onChange}
         />

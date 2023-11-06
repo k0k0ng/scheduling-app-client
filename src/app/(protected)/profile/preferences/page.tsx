@@ -68,14 +68,14 @@ export default function ProfilePreferences() {
                   </div>
                   <div className="mb-6">
                     <label
-                      className="mb-2 block text-xs font-normal tracking-wide text-white"
+                      className="mb-2 block text-xs font-normal tracking-wide text-white md:text-sm"
                       htmlFor="dateformat"
                     >
                       Date Format
                       <div className="customdatepickerwidth">
                         <DatePicker
                           id="dateformat"
-                          className="my-2 block w-full appearance-none rounded border border-gray-200 bg-[#2C2C2C] px-4 py-3 leading-tight text-gray-200 focus:border-gray-500 focus:bg-[#828181] focus:outline-none"
+                          className="my-2 block w-full appearance-none rounded border border-gray-200 bg-[#2C2C2C] px-4 py-3 text-xs leading-tight text-gray-200 focus:border-gray-500 focus:bg-[#828181] focus:outline-none md:text-sm"
                           placeholderText="yyyy/mm/dd"
                           dateFormat="yyyy/MM/dd"
                           showPopperArrow={false}
@@ -87,14 +87,14 @@ export default function ProfilePreferences() {
                   </div>
                   <div className="mb-6">
                     <label
-                      className="mb-2 block text-xs font-normal tracking-wide text-white"
+                      className="mb-2 block text-xs font-normal tracking-wide text-white md:text-sm"
                       htmlFor="timeformat"
                     >
                       Time Format
                       <div className="customdatepickerwidth">
                         <DatePicker
                           id="timeformat"
-                          className="my-2 block w-full appearance-none rounded border border-gray-200 bg-[#2C2C2C] px-4 py-3 leading-tight text-gray-200 focus:border-gray-500 focus:bg-[#828181] focus:outline-none"
+                          className="my-2 block w-full appearance-none rounded border border-gray-200 bg-[#2C2C2C] px-4 py-3 text-xs leading-tight text-gray-200 focus:border-gray-500 focus:bg-[#828181] focus:outline-none md:text-sm"
                           placeholderText="h:mm:a"
                           showPopperArrow={false}
                           selected={timeFormat}
@@ -112,14 +112,14 @@ export default function ProfilePreferences() {
                   {/*  */}
                   <div className="mb-6">
                     <label
-                      className="mb-2 block text-xs font-normal tracking-wide text-white"
+                      className="mb-2 block text-xs font-normal tracking-wide text-white md:text-sm"
                       htmlFor="headerclock"
                     >
                       Top Header Clock
                       <div className="customdatepickerwidth">
                         <DatePicker
                           id="headerclock"
-                          className="my-2 block w-full appearance-none rounded border border-gray-200 bg-[#2C2C2C] px-4 py-3 leading-tight text-gray-200 focus:border-gray-500 focus:bg-[#828181] focus:outline-none"
+                          className="my-2 block w-full appearance-none rounded border border-gray-200 bg-[#2C2C2C] px-4 py-3 text-xs leading-tight text-gray-200 focus:border-gray-500 focus:bg-[#828181] focus:outline-none md:text-sm"
                           placeholderText="h:mm:a"
                           showPopperArrow={false}
                           selected={headerClock}
@@ -137,46 +137,46 @@ export default function ProfilePreferences() {
                   {/*  */}
                   <div className="mb-6">
                     <div className="mb-5 flex-wrap md:flex">
-                      <p className="w-[130px] text-sm text-white">
+                      <p className="mb-5 w-[130px] text-xs text-white md:mb-0 md:text-sm">
                         Guided Tour(s)
                       </p>
                       <label
                         htmlFor="guidedtours"
-                        className="flex cursor-pointer items-center text-sm font-normal"
+                        className="flex-inline cursor-pointer items-center text-sm font-normal"
                       >
                         <input
                           id="guidedtours"
                           type="checkbox"
                           value=""
-                          className="h-4 w-4 rounded border-gray-300 bg-gray-100 accent-purple-600 focus:ring-2 focus:ring-purple-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-purple-600"
+                          className="h-3 w-3 rounded border-gray-300 bg-gray-100 accent-purple-600 focus:ring-2 focus:ring-purple-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-purple-600 md:h-4 md:w-4"
                         />
-                        <span className="ml-2">
+                        <span className="ml-2 text-xs text-white md:text-sm">
                           It will appear automatically the first time.
                         </span>
                       </label>
                     </div>
                     <div className="flex-wrap md:flex">
-                      <p className="w-[130px] text-sm text-white">
+                      <p className="mb-5 w-[130px] text-xs text-white md:mb-0 md:text-sm">
                         Read Me First
                       </p>
                       <label
                         htmlFor="readme"
-                        className="flex cursor-pointer items-center text-sm font-normal"
+                        className="flex-inline cursor-pointer items-center text-sm font-normal"
                       >
                         <input
                           id="readme"
                           type="checkbox"
                           value=""
-                          className="h-4 w-4 rounded border-gray-300 bg-gray-100 accent-purple-600 focus:ring-2 focus:ring-purple-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-purple-600"
+                          className="h-3 w-3 rounded border-gray-300 bg-gray-100 accent-purple-600 focus:ring-2 focus:ring-purple-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-purple-600 md:h-4 md:w-4"
                         />
-                        <span className="ml-2">
+                        <span className="ml-2 text-xs text-white md:text-sm">
                           It will show as long as I don`t turn it off.
                         </span>
                       </label>
                     </div>
                   </div>
                   <div className="mb-6 grid justify-items-end">
-                    <Button size="sm" type="primary" className="button--">
+                    <Button size="md" type="primary" className="button--">
                       Save Changes
                     </Button>
                   </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 // keyboard arrow icon
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
@@ -16,11 +16,33 @@ export default function Select({
   const [notificationValue, setNotificationValue] = useState(parentOption);
   const [notificationOpen, setNotificationOpen] = useState(false);
 
+  function useOutsideAlerter(ref: any) {
+    useEffect(() => {
+      /**
+       * setnotification to false if clicked outside of the element
+       */
+      function handleClickOutside(event: any) {
+        if (ref.current && !ref.current.contains(event.target)) {
+          setNotificationOpen(false);
+        }
+      }
+      // Bind the event listener
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        // Unbind the event listener on clean up
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, [ref]);
+  }
+
+  const wrapperRef = useRef(null);
+  useOutsideAlerter(wrapperRef);
+
   return (
-    <div className="relative">
+    <div className="relative " ref={wrapperRef}>
       <label
         htmlFor="notifications"
-        className="mb-2 block text-xs font-medium tracking-wide text-white"
+        className="mb-2 block text-xs font-medium tracking-wide text-white md:text-sm"
       >
         {labelName}
         <ul
@@ -59,9 +81,9 @@ export default function Select({
           </div>
           {/* children */}
           <div
-            className={`sidebarscroll ${
+            className={`sidebarscroll absolute z-50 ${
               notificationOpen ? "" : "hidden scale-0"
-            }  max-h-[25vh] overflow-y-auto`}
+            }  max-h-[25vh] w-full overflow-y-auto bg-[#2C2C2C]`}
           >
             {childOption.map((list, index, array) => {
               if (index + 1 === array.length) {

@@ -23,11 +23,16 @@ input {
 }
 
 /* datepicker input size css*/
-.customdatepickerwidth, 
-.customdatepickerwidth > div.react-datepicker-wrapper, 
-.customdatepickerwidth > div > div.react-datepicker__input-container
-.customdatepickerwidth > div > div.react-datepicker__input-container input {
-   width: 100%;
+.customdatepickerwidth,
+.customdatepickerwidth > div.react-datepicker-wrapper,
+.customdatepickerwidth
+  > div
+  > div.react-datepicker__input-container
+  .customdatepickerwidth
+  > div
+  > div.react-datepicker__input-container
+  input {
+  width: 100%;
 }
 
 /* *** Customizing Scrollbar Style *** */
@@ -51,5 +56,9 @@ input {
 /* Handle on hover */
 .sidebarscroll::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 /* ======================================= */

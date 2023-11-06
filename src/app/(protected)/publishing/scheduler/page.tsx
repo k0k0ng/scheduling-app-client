@@ -4,17 +4,20 @@ import { useState, useEffect, useRef } from "react";
 
 import SideBar from "@/components/Sidebar";
 import TopNav from "@/components/TopNav";
+import { delay } from "@/utils/globalUtils";
 
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import TuneIcon from "@mui/icons-material/Tune";
+import CloseIcon from "@mui/icons-material/Close";
 
 import CalendarViewFilterMenu from "./components/CalendarViewFilterMenu";
 import PostsBulkActionMenu from "./components/PostsBulkActionMenu";
 import CalendarBody from "./components/CalendarBody";
+import FilterPostsMenu from "./components/FilterPostsMenu";
+import CreatePostModal from "./components/CreatePostModal";
 
 import "./style.css";
-import FilterPostsMenu from "./components/FilterPostsMenu";
 
 const dummyData = [
   { date: "1-11-2023", status: "published" },
@@ -51,6 +54,7 @@ const dummyData = [
 export default function PublishingScheduler() {
   const [sidebarStatus, setSidebarStatus] = useState(true);
   const [filterPostIsShown, setFilterPostIsShown] = useState(false);
+  const [createPostModalIsOpen, setCreatePostModalIsOpen] = useState(false);
 
   const [refresherState, setRefresherState] = useState(false);
   const [selectedDateValue, setSelectedDateValue] = useState("");
@@ -61,6 +65,8 @@ export default function PublishingScheduler() {
     channel: "",
     assignedUser: "",
   });
+
+  const createPostModal = useRef<HTMLDialogElement>(null);
 
   const currentMonth = useRef(0);
   const currentYear = useRef(0);
@@ -77,6 +83,12 @@ export default function PublishingScheduler() {
   const dummyDataHolder = useRef([{ date: "", status: "" }]);
 
   useEffect(() => {
+    if (localStorage.getItem("actionFromDashboard")) {
+      createPostModal.current?.showModal();
+      setCreatePostModalIsOpen(!createPostModalIsOpen);
+      localStorage.removeItem("actionFromDashboard");
+    }
+
     if (date) {
       currentMonth.current = date.getMonth();
       currentYear.current = date.getFullYear();
@@ -174,6 +186,32 @@ export default function PublishingScheduler() {
     }
   };
 
+  const handleOpenCreatePostModal = () => {
+    if (!createPostModalIsOpen) {
+      createPostModal.current?.showModal();
+    }
+    setCreatePostModalIsOpen(!createPostModalIsOpen);
+  };
+
+  const handleCloseCreatePostModal = async () => {
+    if (localStorage.getItem("actionFromDashboard")) {
+      localStorage.removeItem("actionFromDashboard");
+    }
+
+    if (createPostModal.current?.className && createPostModalIsOpen) {
+      createPostModal.current.classList.add("is-hidden");
+    }
+
+    await delay(500);
+
+    if (createPostModal.current?.className && createPostModalIsOpen) {
+      createPostModal.current.classList.remove("is-hidden");
+    }
+
+    createPostModal.current?.close();
+    setCreatePostModalIsOpen(!createPostModalIsOpen);
+  };
+
   return (
     <div className="flex h-[100vh] flex-row items-start">
       <SideBar
@@ -237,6 +275,7 @@ export default function PublishingScheduler() {
                 <button
                   type="button"
                   className="ml-2 rounded bg-[#7B46DE] px-4 py-2 transition duration-300 hover:bg-[#7B46DE]"
+                  onClick={handleOpenCreatePostModal}
                 >
                   <span className="mr-3">+</span>
                   <span>Create Post</span>
@@ -323,6 +362,22 @@ export default function PublishingScheduler() {
             </div>
           </div>
         </main>
+
+        <dialog
+          ref={createPostModal}
+          className="connect-channel-dialog min-w-[100vw] overflow-visible rounded-lg bg-[#202020] lg:min-w-[80vw] xl:min-w-[60vw] 2xl:min-w-[30vw]"
+        >
+          <button
+            aria-label="closebutton"
+            type="button"
+            onClick={handleCloseCreatePostModal}
+            className="absolute right-[-18px] top-[-18px] flex h-[32px] w-[34px] items-center justify-center rounded-[50%] bg-[#F47674EB] font-poppins text-white transition duration-300 hover:bg-[#f4605eeb]"
+          >
+            <CloseIcon />
+          </button>
+
+          <CreatePostModal />
+        </dialog>
       </div>
     </div>
   );

@@ -59,7 +59,7 @@ export default function PublishingScheduler() {
   const [refresherState, setRefresherState] = useState(false);
   const [selectedDateValue, setSelectedDateValue] = useState("");
 
-  const [selectedFilter, setselectedFilter] = useState({
+  const [selectedFilter, setSelectedFilter] = useState({
     status: "",
     contentType: "",
     channel: "",
@@ -136,9 +136,6 @@ export default function PublishingScheduler() {
     setRefresherState(!refresherState);
   }, [selectedFilter.status]);
 
-  console.log(dummyData);
-  console.log(dummyDataHolder);
-
   const months = [
     "January",
     "February",
@@ -176,11 +173,11 @@ export default function PublishingScheduler() {
 
   const handleFilterByStatus = (statusType: string) => {
     if (selectedFilter.status === statusType) {
-      setselectedFilter((prevValue) => {
+      setSelectedFilter((prevValue) => {
         return { ...prevValue, status: "" };
       });
     } else {
-      setselectedFilter((prevValue) => {
+      setSelectedFilter((prevValue) => {
         return { ...prevValue, status: statusType };
       });
     }
@@ -286,7 +283,7 @@ export default function PublishingScheduler() {
             <FilterPostsMenu
               isDisplayed={filterPostIsShown}
               selectedFilter={selectedFilter.status}
-              setselectedFilter={setselectedFilter}
+              setSelectedFilter={setSelectedFilter}
             />
 
             <CalendarBody

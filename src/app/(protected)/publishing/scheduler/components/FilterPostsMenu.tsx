@@ -10,7 +10,7 @@ import FilterPostsByUser from "./components/FilterPostsByUser";
 type FilterPostsMenuType = {
   isDisplayed: boolean;
   selectedFilter: string;
-  setselectedFilter: Dispatch<
+  setSelectedFilter: Dispatch<
     SetStateAction<{
       status: string;
       contentType: string;
@@ -23,14 +23,14 @@ type FilterPostsMenuType = {
 export default function FilterPostsMenu({
   isDisplayed,
   selectedFilter,
-  setselectedFilter,
+  setSelectedFilter,
 }: FilterPostsMenuType) {
   if (isDisplayed) {
     return (
       <div className="flex flex-row items-center justify-evenly gap-x-6 border-t border-[#828181] p-5">
         <FilterPostsByStatus
           selectedFilter={selectedFilter}
-          setselectedFilter={setselectedFilter}
+          setSelectedFilter={setSelectedFilter}
         />
 
         <FilterPostsByContentType />

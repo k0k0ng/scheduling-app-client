@@ -6,7 +6,7 @@ import PopUpFilterMenuLink from "./PopUpFilterMenuLink";
 
 type FilterPostsByStatusType = {
   selectedFilter: string;
-  setselectedFilter: Dispatch<
+  setSelectedFilter: Dispatch<
     SetStateAction<{
       status: string;
       contentType: string;
@@ -18,7 +18,7 @@ type FilterPostsByStatusType = {
 
 export default function FilterPostsByStatus({
   selectedFilter,
-  setselectedFilter,
+  setSelectedFilter,
 }: FilterPostsByStatusType) {
   const [calendarViewFilterIsOpen, setCalendarViewFilterIsOpen] =
     useState(false);
@@ -50,11 +50,11 @@ export default function FilterPostsByStatus({
 
   const handleMonthlyViewLinkAction = () => {
     if (selectedFilter === "draft") {
-      setselectedFilter((prevValue) => {
+      setSelectedFilter((prevValue) => {
         return { ...prevValue, status: "" };
       });
     } else {
-      setselectedFilter((prevValue) => {
+      setSelectedFilter((prevValue) => {
         return { ...prevValue, status: "draft" };
       });
     }
@@ -62,11 +62,11 @@ export default function FilterPostsByStatus({
 
   const handleWeeklyViewLinkAction = () => {
     if (selectedFilter === "scheduled") {
-      setselectedFilter((prevValue) => {
+      setSelectedFilter((prevValue) => {
         return { ...prevValue, status: "" };
       });
     } else {
-      setselectedFilter((prevValue) => {
+      setSelectedFilter((prevValue) => {
         return { ...prevValue, status: "scheduled" };
       });
     }
@@ -74,11 +74,11 @@ export default function FilterPostsByStatus({
 
   const handleListViewLinkAction = () => {
     if (selectedFilter === "in-progress") {
-      setselectedFilter((prevValue) => {
+      setSelectedFilter((prevValue) => {
         return { ...prevValue, status: "" };
       });
     } else {
-      setselectedFilter((prevValue) => {
+      setSelectedFilter((prevValue) => {
         return { ...prevValue, status: "in-progress" };
       });
     }
@@ -86,11 +86,11 @@ export default function FilterPostsByStatus({
 
   const handleCompactViewLinkAction = () => {
     if (selectedFilter === "published") {
-      setselectedFilter((prevValue) => {
+      setSelectedFilter((prevValue) => {
         return { ...prevValue, status: "" };
       });
     } else {
-      setselectedFilter((prevValue) => {
+      setSelectedFilter((prevValue) => {
         return { ...prevValue, status: "published" };
       });
     }
@@ -98,11 +98,11 @@ export default function FilterPostsByStatus({
 
   const handleDetailedViewLinkAction = () => {
     if (selectedFilter === "error") {
-      setselectedFilter((prevValue) => {
+      setSelectedFilter((prevValue) => {
         return { ...prevValue, status: "" };
       });
     } else {
-      setselectedFilter((prevValue) => {
+      setSelectedFilter((prevValue) => {
         return { ...prevValue, status: "error" };
       });
     }

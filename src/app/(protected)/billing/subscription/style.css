@@ -1,0 +1,13 @@
+/* billing top card bg */
+.top-card-button-bg {
+  opacity: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url("/billing/bg/subscription-id-card.png");
+  transition: opacity 0.3s;
+}
+
+.top-card-button:hover .top-card-button-bg {
+  opacity: 98;
+}

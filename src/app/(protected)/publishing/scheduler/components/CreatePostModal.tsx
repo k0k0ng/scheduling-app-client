@@ -2,7 +2,6 @@ import { useState } from "react";
 
 import Image from "next/image";
 
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import ImageIcon from "@mui/icons-material/Image";
 import VideocamIcon from "@mui/icons-material/Videocam";
 import CloudUploadOutlinedIcon from "@mui/icons-material/CloudUploadOutlined";
@@ -20,6 +19,7 @@ import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
 import TuneIcon from "@mui/icons-material/Tune";
 import ClosedCaptionOutlinedIcon from "@mui/icons-material/ClosedCaptionOutlined";
 
+import Datepicker from "@/components/DatePicker/Datepicker";
 import ModalSelectChannelsMenu from "./components/ModalSelectChannelsMenu";
 import ModalSelectAssignedUserMenu from "./components/ModalSelectAssignedUserMenu";
 import ModalSelectLabelMenu from "./components/ModalSelectLabelMenu";
@@ -30,9 +30,12 @@ import ModalSelectCallToActionMenu from "./components/ModalSelectCallToActionMen
 import ModalSelectLongCaptionMenu from "./components/ModalSelectLongCaptionMenu";
 
 export default function CreatePostModal() {
+  const [schedulePostDate, setschedulePostDate] = useState("");
   const [selectedFileType, setSelectedFileType] = useState("image");
   const [selectedAdditionalOption, setSelectedAdditionalOption] =
     useState("comments");
+
+  console.log(schedulePostDate); // console logged just to avoid error in EsLint
 
   const renderCommentsConfiguration = () => {
     return (
@@ -81,10 +84,7 @@ export default function CreatePostModal() {
       </div>
 
       <div className="no-scrollbar max-h-[65vh] overflow-y-scroll px-10 py-6 font-poppins text-white">
-        <div className="rounded-md border p-3">
-          <AccessTimeIcon />
-          <span className="ml-6">2023/10/20 | 00:00</span>
-        </div>
+        <Datepicker setschedulePostDate={setschedulePostDate} />
 
         <ModalSelectChannelsMenu />
 
@@ -116,6 +116,7 @@ export default function CreatePostModal() {
           <div className="flex flex-row items-center justify-center gap-x-2">
             <button
               type="button"
+              aria-label="Upload content button"
               className="rounded-[50%] bg-[#2C2C2C] p-2 hover:bg-[#3D3D3D]"
             >
               <CloudUploadOutlinedIcon className="h-[25px] w-[25px]" />
@@ -195,6 +196,7 @@ export default function CreatePostModal() {
         <div className="mt-6 flex flex-row rounded-md bg-[#2C2C2C]">
           <button
             type="button"
+            aria-label="Comments configuration"
             className={`flex w-full items-center justify-center gap-x-2 rounded-l py-2  transition duration-300 hover:bg-[#7B46DE] ${
               selectedAdditionalOption === "comments" && "bg-[#7B46DE]"
             }`}
@@ -204,18 +206,21 @@ export default function CreatePostModal() {
           </button>
           <button
             type="button"
+            aria-label="tag a profile configuration"
             className="flex w-full items-center justify-center gap-x-2 py-2 transition  duration-300 hover:bg-[#7B46DE]"
           >
             <PersonAddAltOutlinedIcon />
           </button>
           <button
             type="button"
+            aria-label="add location configuration"
             className="flex w-full items-center justify-center gap-x-2 py-2 transition  duration-300 hover:bg-[#7B46DE]"
           >
             <LocationOnOutlinedIcon />
           </button>
           <button
             type="button"
+            aria-label="additional settings configuration"
             className={`flex w-full items-center justify-center gap-x-2 rounded-r py-2 transition  duration-300 hover:bg-[#7B46DE] ${
               selectedAdditionalOption === "settings" && "bg-[#7B46DE]"
             }`}

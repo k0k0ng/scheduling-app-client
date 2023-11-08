@@ -138,7 +138,9 @@ export default function FilterPostsByStatus({
         className="flex w-full items-center justify-between rounded border-[#828181] bg-[#2C2C2C] px-4 py-2 font-poppins text-[14px] transition duration-300 hover:border-[#7B46DE]"
         onClick={handleTogglePopUpMenu}
       >
-        <span>Status</span>
+        <span>
+          {selectedFilter === "" ? "Status" : selectedFilter.toUpperCase()}
+        </span>
 
         <KeyboardArrowDownIcon />
       </button>

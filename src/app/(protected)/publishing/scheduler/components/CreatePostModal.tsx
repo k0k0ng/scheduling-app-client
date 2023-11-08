@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 import Image from "next/image";
+
+import { delay } from "@/utils/globalUtils";
 
 import ImageIcon from "@mui/icons-material/Image";
 import VideocamIcon from "@mui/icons-material/Videocam";
@@ -18,6 +20,7 @@ import EditCalendarOutlinedIcon from "@mui/icons-material/EditCalendarOutlined";
 import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
 import TuneIcon from "@mui/icons-material/Tune";
 import ClosedCaptionOutlinedIcon from "@mui/icons-material/ClosedCaptionOutlined";
+import CloseIcon from "@mui/icons-material/Close";
 
 import Datepicker from "@/components/DatePicker/Datepicker";
 import ModalSelectChannelsMenu from "./components/ModalSelectChannelsMenu";
@@ -28,12 +31,19 @@ import ModalSelectNotificationSettingsMenu from "./components/ModalSelectNotific
 import ModalSelectPublishingTypeMenu from "./components/ModalSelectPublishingTypeMenu";
 import ModalSelectCallToActionMenu from "./components/ModalSelectCallToActionMenu";
 import ModalSelectLongCaptionMenu from "./components/ModalSelectLongCaptionMenu";
+import TagAProfileModal from "./components/TagAProfileModal";
+import AddLocationModal from "./components/AddLocationModal";
 
 export default function CreatePostModal() {
   const [schedulePostDate, setschedulePostDate] = useState("");
   const [selectedFileType, setSelectedFileType] = useState("image");
   const [selectedAdditionalOption, setSelectedAdditionalOption] =
     useState("comments");
+
+  const [tagAProfileModalIsOpen, setTagAProfileModalIsOpen] = useState(false);
+  const [addLocationModalIsOpen, setAddLocationModalIsOpen] = useState(false);
+  const tagAProfileModal = useRef<HTMLDialogElement>(null);
+  const addLocationModal = useRef<HTMLDialogElement>(null);
 
   console.log(schedulePostDate); // console logged just to avoid error in EsLint
 
@@ -75,6 +85,58 @@ export default function CreatePostModal() {
         <ModalSelectLongCaptionMenu />
       </div>
     );
+  };
+
+  const handleOpenTagAProfileModal = () => {
+    if (!tagAProfileModalIsOpen) {
+      tagAProfileModal.current?.showModal();
+    }
+    setTagAProfileModalIsOpen(!tagAProfileModalIsOpen);
+  };
+
+  const handleCloseTagAProfileModal = async () => {
+    if (localStorage.getItem("actionFromDashboard")) {
+      localStorage.removeItem("actionFromDashboard");
+    }
+
+    if (tagAProfileModal.current?.className && tagAProfileModalIsOpen) {
+      tagAProfileModal.current.classList.add("is-hidden");
+    }
+
+    await delay(500);
+
+    if (tagAProfileModal.current?.className && tagAProfileModalIsOpen) {
+      tagAProfileModal.current.classList.remove("is-hidden");
+    }
+
+    tagAProfileModal.current?.close();
+    setTagAProfileModalIsOpen(!tagAProfileModalIsOpen);
+  };
+
+  const handleOpenAddLocationModal = () => {
+    if (!addLocationModalIsOpen) {
+      addLocationModal.current?.showModal();
+    }
+    setAddLocationModalIsOpen(!addLocationModalIsOpen);
+  };
+
+  const handleCloseAddLocationModal = async () => {
+    if (localStorage.getItem("actionFromDashboard")) {
+      localStorage.removeItem("actionFromDashboard");
+    }
+
+    if (addLocationModal.current?.className && addLocationModalIsOpen) {
+      addLocationModal.current.classList.add("is-hidden");
+    }
+
+    await delay(500);
+
+    if (addLocationModal.current?.className && addLocationModalIsOpen) {
+      addLocationModal.current.classList.remove("is-hidden");
+    }
+
+    addLocationModal.current?.close();
+    setAddLocationModalIsOpen(!addLocationModalIsOpen);
   };
 
   return (
@@ -204,17 +266,21 @@ export default function CreatePostModal() {
           >
             <SmsOutlinedIcon />
           </button>
+
           <button
             type="button"
             aria-label="tag a profile configuration"
             className="flex w-full items-center justify-center gap-x-2 py-2 transition  duration-300 hover:bg-[#7B46DE]"
+            onClick={handleOpenTagAProfileModal}
           >
             <PersonAddAltOutlinedIcon />
           </button>
+
           <button
             type="button"
             aria-label="add location configuration"
             className="flex w-full items-center justify-center gap-x-2 py-2 transition  duration-300 hover:bg-[#7B46DE]"
+            onClick={handleOpenAddLocationModal}
           >
             <LocationOnOutlinedIcon />
           </button>
@@ -255,6 +321,38 @@ export default function CreatePostModal() {
           </button>
         </div>
       </div>
+
+      <dialog
+        ref={tagAProfileModal}
+        className="connect-channel-dialog min-w-[100vw] overflow-visible rounded-lg bg-[#202020] lg:min-w-[85vw] xl:min-w-[65vw] 2xl:min-w-[35vw]"
+      >
+        <button
+          aria-label="closebutton"
+          type="button"
+          onClick={handleCloseTagAProfileModal}
+          className="absolute right-[10px] top-[10px] h-[32px] w-[34px] font-poppins text-[#a8a8a8] transition duration-300 hover:text-white"
+        >
+          <CloseIcon />
+        </button>
+
+        <TagAProfileModal />
+      </dialog>
+
+      <dialog
+        ref={addLocationModal}
+        className="connect-channel-dialog min-w-[100vw] overflow-visible rounded-lg bg-[#202020] lg:min-w-[85vw] xl:min-w-[65vw] 2xl:min-w-[35vw]"
+      >
+        <button
+          aria-label="closebutton"
+          type="button"
+          onClick={handleCloseAddLocationModal}
+          className="absolute right-[10px] top-[10px] h-[32px] w-[34px] font-poppins text-[#a8a8a8] transition duration-300 hover:text-white"
+        >
+          <CloseIcon />
+        </button>
+
+        <AddLocationModal />
+      </dialog>
     </>
   );
 }

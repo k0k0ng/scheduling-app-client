@@ -14,7 +14,7 @@ body {
   border: 1px solid #7b46de;
 }
 
-input {
+.search-input {
   color: #c0c0c0;
   font-size: 14px;
   background-color: transparent;
@@ -62,4 +62,3 @@ input {
   display: none;
 }
 /* ======================================= */
-

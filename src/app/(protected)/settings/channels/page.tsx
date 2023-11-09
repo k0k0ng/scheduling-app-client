@@ -148,7 +148,12 @@ export default function SettingsChannels() {
               >
                 <SearchIcon />
               </button>
-              <input type="text" placeholder="Search anything" name="search" />
+              <input
+                type="text"
+                placeholder="Search anything"
+                name="search"
+                className="search-input"
+              />
             </form>
           </div>
 

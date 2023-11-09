@@ -1,17 +1,18 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import { useRouter } from "next/navigation";
 
 import SideBar from "@/components/Sidebar";
 import TopNav from "@/components/TopNav";
-import SearchIcon from "@mui/icons-material/Search";
 import TopCardButton from "./components/TopCardButton";
 
-import AnalyticsOverview from "./components/AnalyticsOverview";
+import AnalyticsOverviewPanel from "./components/AnalyticsOverviewPanel";
 
 import "./style.css";
+
+import TaskBoardPanel from "./components/TaskBoardPanel";
 
 export default function Dashboard() {
   const router = useRouter();
@@ -55,23 +56,6 @@ export default function Dashboard() {
         <TopNav title="Dashboard" />
 
         <main className="mt-8 min-w-[20rem] pl-8 pr-6 xl:pl-10 xl:pr-10 2xl:pr-20">
-          <div className="flex min-h-[45px] w-full flex-row justify-end">
-            <form
-              action="/dashboard"
-              autoComplete="off"
-              className="search-form flex min-w-full flex-row rounded-md border border-[#C0C0C0] px-4 transition duration-300 lg:min-w-[100px]"
-            >
-              <button
-                aria-label="search-submit"
-                type="submit"
-                className="mr-4 transition duration-300 hover:text-[#7B46DE]"
-              >
-                <SearchIcon />
-              </button>
-              <input type="text" placeholder="Search anything" name="search" />
-            </form>
-          </div>
-
           <div
             className={`mt-10 grid grid-cols-1 ${
               sidebarStatus ? "md:grid-cols-1" : "md:grid-cols-2"
@@ -103,22 +87,9 @@ export default function Dashboard() {
           </div>
 
           <div className="mt-10 grid grid-cols-3 items-start gap-8 font-poppins lg:grid-cols-6">
-            <div className="col-span-3 min-h-[550px] rounded bg-[#202020] p-10 xl:col-span-2">
-              <h5 className="text-[18px] font-semibold">Task Board</h5>
-              <div className="mt-1 text-[12px]">
-                Summary of your active boards
-              </div>
-              <div className="mt-4 flex min-h-[28rem] w-full flex-col items-center justify-center gap-1">
-                <span className="mt-[-5rem] text-[18px] font-semibold">
-                  No Records Yet
-                </span>
-                <span className="text-[12px]">
-                  You do not have any active tasks yet.
-                </span>
-              </div>
-            </div>
+            <TaskBoardPanel />
 
-            <AnalyticsOverview />
+            <AnalyticsOverviewPanel />
           </div>
         </main>
       </div>

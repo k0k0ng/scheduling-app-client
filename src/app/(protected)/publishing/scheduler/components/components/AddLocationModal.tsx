@@ -55,7 +55,12 @@ export default function AddLocationModal() {
               >
                 <SearchIcon />
               </button>
-              <input type="text" placeholder="Search anything" name="search" />
+              <input
+                type="text"
+                placeholder="Search anything"
+                name="search"
+                className="search-input"
+              />
             </form>
           </div>
 

@@ -27,7 +27,7 @@ export default function ConnectChannelModal() {
           type="text"
           placeholder="Search anything"
           name="search"
-          className="w-full"
+          className="search-input w-full"
         />
       </form>
 

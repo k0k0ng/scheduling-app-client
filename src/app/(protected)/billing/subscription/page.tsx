@@ -32,10 +32,10 @@ export default function BillingSubscription() {
           <p className="mb-5 font-poppins text-[20px] font-semibold md:hidden">
             Subscription
           </p>
-          <div className="block h-full w-full justify-center lg:flex">
+          <div className="block h-full w-full justify-center xl:flex">
             <div className="mb-4 w-full rounded bg-[#202020] p-8 md:mr-4 ">
               <div className="mb-10">
-                <div className="top-card-button-bg relative mb-2 min-h-[130px] w-full rounded-md p-8 sm:min-h-[194px] md:w-[366px]">
+                <div className="top-card-button-bg relative mb-2 min-h-[150px] w-full rounded-md p-8 sm:min-h-[194px] md:w-[366px]">
                   <div className="absolute left-0 top-0 p-4 sm:p-6">
                     <p className="font-poppins text-[9px] font-thin tracking-tight sm:text-[14px]">
                       Subscription Plan
@@ -62,17 +62,103 @@ export default function BillingSubscription() {
                     </Button>
                   </div>
                 </div>
-                <p className="font poppins text-[10px] font-light leading-5 2xl:text-sm">
+                <p className="font poppins text-[10px] font-light leading-5 md:text-sm">
                   Your plan will automatically renew on{" "}
                   <span className="font-semibold">MM/DD/YYYY.</span> You’ll be
                   charged <span className="font-semibold">$19.99/month.</span>
                 </p>
               </div>
               <div className="font-poppins ">
-                <p className="mb-8 text-sm font-semibold tracking-tight text-[#7BDCDE] 2xl:text-[20px]">
+                <p className="mb-8 text-sm font-semibold tracking-tight text-[#7BDCDE] md:text-[20px]">
                   Plan Includes
                 </p>
-                <ul className="sidebarscroll max-h-[55vh] w-full overflow-y-auto">
+                <ul className="sidebarscroll max-h-[40vh] w-full overflow-y-auto xl:max-h-[52vh]">
+                  <li className="border-b border-[#2C2C2C] ">
+                    <a
+                      className="flex w-full items-center justify-between p-2 py-2  hover:bg-[#7B46DE] "
+                      href="/#"
+                    >
+                      <span className="text-xs 2xl:text-sm">
+                        Number of Users
+                      </span>
+                      <button
+                        className="rounded bg-[#2C2C2C] px-3 py-1 text-xs hover:text-[#7B46DE] 2xl:text-sm"
+                        type="button"
+                      >
+                        1
+                      </button>
+                    </a>
+                  </li>
+                  <li className="border-b border-[#2C2C2C] ">
+                    <a
+                      className="flex w-full items-center justify-between p-2 py-2  hover:bg-[#7B46DE] "
+                      href="/#"
+                    >
+                      <span className="text-xs 2xl:text-sm">Channels</span>
+                      <button
+                        className="rounded bg-[#2C2C2C] px-3 py-1 text-xs hover:text-[#7B46DE] 2xl:text-sm"
+                        type="button"
+                      >
+                        2
+                      </button>
+                    </a>
+                  </li>
+                  <li className="border-b border-[#2C2C2C] ">
+                    <a
+                      className="flex w-full items-center justify-between p-2 py-2  hover:bg-[#7B46DE] "
+                      href="/#"
+                    >
+                      <span className="text-xs 2xl:text-sm">Post Per Day</span>
+                      <button
+                        className="rounded bg-[#2C2C2C] px-3 py-1 text-xs hover:text-[#7B46DE] 2xl:text-sm"
+                        type="button"
+                      >
+                        5
+                      </button>
+                    </a>
+                  </li>
+                  <li className="border-b border-[#2C2C2C] ">
+                    <a
+                      className="flex w-full items-center justify-between p-2 py-2  hover:bg-[#7B46DE] "
+                      href="/#"
+                    >
+                      <span className="text-xs 2xl:text-sm">Credits</span>
+                      <button
+                        className="rounded bg-[#2C2C2C] px-3 py-1 text-xs hover:text-[#7B46DE] 2xl:text-sm"
+                        type="button"
+                      >
+                        0
+                      </button>
+                    </a>
+                  </li>
+                  <li className="border-b border-[#2C2C2C] ">
+                    <a
+                      className="flex w-full items-center justify-between p-2 py-2  hover:bg-[#7B46DE] "
+                      href="/#"
+                    >
+                      <span className="text-xs 2xl:text-sm">Lorem Ipsum</span>
+                      <button
+                        className="rounded bg-[#2C2C2C] px-3 py-1 text-xs hover:text-[#7B46DE] 2xl:text-sm"
+                        type="button"
+                      >
+                        0
+                      </button>
+                    </a>
+                  </li>
+                  <li className="border-b border-[#2C2C2C] ">
+                    <a
+                      className="flex w-full items-center justify-between p-2 py-2  hover:bg-[#7B46DE] "
+                      href="/#"
+                    >
+                      <span className="text-xs 2xl:text-sm">Lorem Ipsum</span>
+                      <button
+                        className="rounded bg-[#2C2C2C] px-3 py-1 text-xs hover:text-[#7B46DE] 2xl:text-sm"
+                        type="button"
+                      >
+                        0
+                      </button>
+                    </a>
+                  </li>
                   <li className="border-b border-[#2C2C2C] ">
                     <a
                       className="flex w-full items-center justify-between p-2 py-2  hover:bg-[#7B46DE] "
@@ -244,7 +330,7 @@ export default function BillingSubscription() {
                 </ul>
               </div>
             </div>
-            <div className="block h-full w-full font-poppins lg:w-2/3">
+            <div className="block h-full w-full font-poppins xl:w-2/3">
               {/* 1 */}
               <div className="mb-4 min-h-[276px] w-full rounded bg-[#202020] p-8">
                 <div className="mb-6 flex w-full items-center justify-between border-b border-[#2C2C2C] pb-4">
@@ -253,9 +339,8 @@ export default function BillingSubscription() {
                   </p>
                   <Button
                     type="primary"
-                    size="sm"
                     onClick={() => {}}
-                    className="button--"
+                    className="button-- px-2 py-2 text-xs md:text-sm 2xl:px-3"
                     iconLeft={
                       <EditOutlinedIcon className="h-3 w-3 md:h-4 md:w-4" />
                     }
@@ -313,9 +398,8 @@ export default function BillingSubscription() {
                   </p>
                   <Button
                     type="primary"
-                    size="sm"
                     onClick={() => {}}
-                    className="button--"
+                    className="button-- px-2 py-2 text-xs md:text-sm 2xl:px-3"
                     iconLeft={
                       <AddOutlinedIcon className="h-3 w-3 md:h-4 md:w-4" />
                     }
@@ -337,9 +421,8 @@ export default function BillingSubscription() {
                   </p>
                   <Button
                     type="primary"
-                    size="sm"
                     onClick={() => {}}
-                    className="button--"
+                    className="button-- px-2 py-2 text-xs md:text-sm 2xl:px-3"
                     iconLeft={
                       <AddOutlinedIcon className="h-3 w-3 md:h-4 md:w-4" />
                     }

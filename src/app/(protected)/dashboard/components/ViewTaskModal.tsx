@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 
-import AddIcon from "@mui/icons-material/Add";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import HourglassBottomRoundedIcon from "@mui/icons-material/HourglassBottomRounded";
 import CheckRoundedIcon from "@mui/icons-material/CheckRounded";
@@ -95,7 +94,7 @@ export default function ViewTaskModal({
 
   return (
     <div className="font-poppins text-white">
-      <div className={`task-board-card px-8 pb-4 pt-8 text-white`}>
+      <div className="task-board-card px-8 pb-4 pt-8 text-white">
         <div className="flex items-center justify-between">
           <span className="text-[12px] text-[#C0C0C0]">
             #{taskData.taskNumber}
@@ -109,6 +108,7 @@ export default function ViewTaskModal({
 
         {!editTitle && (
           <div
+            role="presentation"
             className="mt-4 cursor-pointer text-[20px] font-semibold"
             onClick={() => setEditTitle(true)}
           >
@@ -125,6 +125,7 @@ export default function ViewTaskModal({
             />
             <div className="mt-3 flex flex-row gap-x-3">
               <button
+                type="button"
                 className="flex min-h-[30px] items-center justify-center gap-x-2 rounded border px-3 py-1 text-[12px] transition duration-300"
                 onClick={handleCancelNewTaskTitle}
               >
@@ -132,6 +133,7 @@ export default function ViewTaskModal({
               </button>
 
               <button
+                type="button"
                 className="flex min-h-[30px] items-center justify-center gap-x-2 rounded border border-[#7B46DE] bg-[#7B46DE] px-3 py-1 text-[12px] transition  duration-300"
                 onClickCapture={handleSaveNewTaskTitle}
               >
@@ -146,6 +148,7 @@ export default function ViewTaskModal({
         {!editDescription && (
           <div className="h-[12rem]">
             <p
+              role="presentation"
               className="mt-2  w-full rounded-md text-[14px] leading-[20px] text-white"
               onClick={() => setEditDescription(true)}
             >
@@ -163,6 +166,7 @@ export default function ViewTaskModal({
             />
             <div className="mt-1 flex flex-row gap-x-3">
               <button
+                type="button"
                 className="flex min-h-[30px] items-center justify-center gap-x-2 rounded border px-3 py-1 text-[12px] transition duration-300"
                 onClick={handleCancelNewTaskDescription}
               >
@@ -170,6 +174,7 @@ export default function ViewTaskModal({
               </button>
 
               <button
+                type="button"
                 className="flex min-h-[30px] items-center justify-center gap-x-2 rounded border border-[#7B46DE] bg-[#7B46DE] px-3 py-1 text-[12px] transition  duration-300"
                 onClickCapture={handleSaveNewTaskDescription}
               >
@@ -184,6 +189,7 @@ export default function ViewTaskModal({
         {taskData.status === "To-do" && (
           <>
             <button
+              type="button"
               className="flex min-h-[40px] w-full items-center justify-center gap-x-2 rounded border text-[14px] transition duration-300"
               onClick={handleMarkTaskAsInProgress}
             >
@@ -192,6 +198,7 @@ export default function ViewTaskModal({
             </button>
 
             <button
+              type="button"
               className="flex min-h-[40px] w-full items-center justify-center gap-x-2 rounded bg-[#7B46DE] text-[14px] transition  duration-300"
               onClick={handleMarkTaskAsDone}
             >
@@ -204,6 +211,7 @@ export default function ViewTaskModal({
         {taskData.status === "In-Progress" && (
           <>
             <button
+              type="button"
               className="flex min-h-[40px] w-full items-center justify-center gap-x-2 rounded border text-[14px] transition duration-300"
               onClick={handleMarkTaskAsToDo}
             >
@@ -212,6 +220,7 @@ export default function ViewTaskModal({
             </button>
 
             <button
+              type="button"
               className="flex min-h-[40px] w-full items-center justify-center gap-x-2 rounded bg-[#7B46DE] text-[14px] transition  duration-300"
               onClick={handleMarkTaskAsDone}
             >
@@ -224,6 +233,7 @@ export default function ViewTaskModal({
         {taskData.status === "Done" && (
           <>
             <button
+              type="button"
               className="flex min-h-[40px] w-full items-center justify-center gap-x-2 rounded border text-[14px] transition duration-300"
               onClick={handleMarkTaskAsToDo}
             >
@@ -232,6 +242,7 @@ export default function ViewTaskModal({
             </button>
 
             <button
+              type="button"
               className="flex min-h-[40px] w-full items-center justify-center gap-x-2 rounded bg-[#7B46DE] text-[14px] transition  duration-300"
               onClick={handleMarkTaskAsInProgress}
             >

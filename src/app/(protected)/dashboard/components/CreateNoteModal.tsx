@@ -74,6 +74,7 @@ export default function CreateNoteModal() {
       </div>
 
       <button
+        type="button"
         disabled={addNoteBtnIsDisabled && true}
         className={`mt-16 flex min-h-[40px] w-full items-center justify-center rounded transition duration-300 ${
           addNoteBtnIsDisabled ? "bg-[#707070]" : "bg-[#7B46DE]"

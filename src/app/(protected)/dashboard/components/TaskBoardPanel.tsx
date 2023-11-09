@@ -39,7 +39,7 @@ export default function TaskBoardPanel() {
 
   const createNoteModal = useRef<HTMLDialogElement>(null);
   const viewTaskModal = useRef<HTMLDialogElement>(null);
-  let selectedTaskData = useRef({
+  const selectedTaskData = useRef({
     taskNumber: "",
     status: "",
     title: "",
@@ -142,8 +142,9 @@ export default function TaskBoardPanel() {
               return (
                 <div
                   key={data.taskNumber}
+                  role="presentation"
                   className={`task-board-card min-h-[6rem] cursor-pointer rounded-md  bg-white px-4 pb-4 pt-3 text-black ${data.status}`}
-                  onClick={(e) => handleOpenViewTaskModal(data)}
+                  onClick={() => handleOpenViewTaskModal(data)}
                 >
                   <div className="flex items-center justify-between">
                     <span className="text-[12px] text-[#828281]">

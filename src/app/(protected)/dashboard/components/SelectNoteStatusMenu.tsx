@@ -56,7 +56,7 @@ export default function SelectNoteStatusMenu({
 
   const handleSelectNoteStatus = (status: string) => {
     setSelectedNoteStatus((prevValue) => {
-      return { ...prevValue, status: status };
+      return { ...prevValue, status };
     });
 
     handleTogglePopUpMenu();

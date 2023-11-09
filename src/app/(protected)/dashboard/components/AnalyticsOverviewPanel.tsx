@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import Image from "next/image";
 
-export default function AnalyticsOverview() {
+export default function AnalyticsOverviewPanel() {
   const [activeChannelCategory, setActiveChannelCategory] =
     useState("facebook");
 

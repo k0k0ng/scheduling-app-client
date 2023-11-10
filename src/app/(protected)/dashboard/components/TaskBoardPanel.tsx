@@ -108,11 +108,13 @@ export default function TaskBoardPanel() {
           </div>
           <button
             type="button"
-            className="flex items-center justify-center gap-x-1 rounded bg-[#7B46DE] py-2 pl-2 pr-3"
+            className="flex items-center justify-center gap-x-1 rounded bg-[#7B46DE] py-2 pl-2 pr-2 md:pr-3"
             onClick={handleOpenCreatePostModal}
           >
             <AddIcon />
-            <span className="font-poppins text-[14px]">Add</span>
+            <span className="hidden font-poppins text-[14px] md:block">
+              Add
+            </span>
           </button>
         </div>
 
@@ -181,7 +183,7 @@ export default function TaskBoardPanel() {
 
       <dialog
         ref={createNoteModal}
-        className="create-note-dialog min-w-[100vw] overflow-visible rounded-lg bg-[#202020] lg:min-w-[80vw] xl:min-w-[60vw] 2xl:min-w-[30vw]"
+        className="create-note-dialog min-w-[90vw] overflow-visible rounded-lg bg-[#202020] md:min-w-[60vw] lg:min-w-[50vw] xl:min-w-[40vw] 2xl:min-w-[30vw]"
       >
         <button
           aria-label="closebutton"
@@ -197,7 +199,7 @@ export default function TaskBoardPanel() {
 
       <dialog
         ref={viewTaskModal}
-        className="create-note-dialog w-[100vw] overflow-visible rounded-lg bg-[#202020] lg:w-[80vw] xl:w-[60vw] 2xl:w-[30vw]"
+        className="create-note-dialog w-[90vw] overflow-visible rounded-lg bg-[#202020] md:w-[60vw] lg:w-[50vw] xl:w-[40vw] 2xl:w-[30vw]"
       >
         <button
           aria-label="closebutton"

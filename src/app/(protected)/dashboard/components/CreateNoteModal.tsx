@@ -13,7 +13,6 @@ export default function CreateNoteModal() {
   const [addNoteBtnIsDisabled, setAddNoteBtnIsDisabled] = useState(true);
 
   useEffect(() => {
-    console.log(noteData);
     if (noteData.status !== "" && noteData.title !== "") {
       setAddNoteBtnIsDisabled(false);
     } else {

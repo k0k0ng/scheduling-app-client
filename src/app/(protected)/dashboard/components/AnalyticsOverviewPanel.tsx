@@ -77,11 +77,19 @@ export default function AnalyticsOverviewPanel() {
           </button>
         </div>
       </div>
-      <div className="mt-5 grid grid-cols-1 gap-5 xl:grid-cols-2">
-        <div className="min-h-[210px] w-full rounded bg-[#FFF]" />
-        <div className="min-h-[210px] w-full rounded bg-[#FFF]" />
-        <div className="min-h-[210px] w-full rounded bg-[#FFF]" />
-        <div className="min-h-[210px] w-full rounded bg-[#FFF]" />
+      <div className="mt-5 grid grid-cols-1 gap-4 xl:grid-cols-2">
+        <div className="flex min-h-[225px] w-full items-center justify-center rounded bg-[#555555]">
+          No data available
+        </div>
+        <div className="flex min-h-[225px] w-full items-center justify-center rounded bg-[#555555]">
+          No data available
+        </div>
+        <div className="flex min-h-[225px] w-full items-center justify-center rounded bg-[#555555]">
+          No data available
+        </div>
+        <div className="flex min-h-[225px] w-full items-center justify-center rounded bg-[#555555]">
+          No data available
+        </div>
       </div>
     </div>
   );

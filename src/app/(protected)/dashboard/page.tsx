@@ -50,14 +50,12 @@ export default function Dashboard() {
         sidebarIsOpen={sidebarStatus}
         setSidebarIsOpen={setSidebarStatus}
       />
-      <div
-        className={`w-full pb-20 ${sidebarStatus ? "md:ml-64" : "md:ml-20"} `}
-      >
+      <div className={`w-full ${sidebarStatus ? "md:ml-64" : "md:ml-20"} `}>
         <TopNav title="Dashboard" />
 
-        <main className="mt-8 min-w-[20rem] pl-8 pr-6 xl:pl-10 xl:pr-10 2xl:pr-20">
+        <main className="sidebarscroll mt-8 max-h-[86vh] min-w-[20rem] overflow-y-scroll pl-8 pr-6 xl:pl-10 xl:pr-10 2xl:pr-20">
           <div
-            className={`mt-10 grid grid-cols-1 ${
+            className={` grid grid-cols-1 ${
               sidebarStatus ? "md:grid-cols-1" : "md:grid-cols-2"
             }  gap-8 lg:grid-cols-2 xl:grid-cols-4`}
           >

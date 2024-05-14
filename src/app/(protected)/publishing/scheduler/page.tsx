@@ -362,7 +362,7 @@ export default function PublishingScheduler() {
 
         <dialog
           ref={createPostModal}
-          className="connect-channel-dialog min-w-[100vw] overflow-visible rounded-lg bg-[#202020] lg:min-w-[80vw] xl:min-w-[60vw] 2xl:min-w-[30vw]"
+          className="create-post-dialog min-w-[100vw] overflow-visible rounded-lg bg-[#202020] lg:min-w-[80vw] xl:min-w-[60vw] 2xl:min-w-[30vw]"
         >
           <button
             aria-label="closebutton"

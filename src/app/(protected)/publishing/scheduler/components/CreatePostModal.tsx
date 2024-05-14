@@ -324,7 +324,7 @@ export default function CreatePostModal() {
 
       <dialog
         ref={tagAProfileModal}
-        className="connect-channel-dialog min-w-[100vw] overflow-visible rounded-lg bg-[#202020] lg:min-w-[85vw] xl:min-w-[65vw] 2xl:min-w-[35vw]"
+        className="create-post-dialog min-w-[100vw] overflow-visible rounded-lg bg-[#202020] lg:min-w-[85vw] xl:min-w-[65vw] 2xl:min-w-[35vw]"
       >
         <button
           aria-label="closebutton"
@@ -340,7 +340,7 @@ export default function CreatePostModal() {
 
       <dialog
         ref={addLocationModal}
-        className="connect-channel-dialog min-w-[100vw] overflow-visible rounded-lg bg-[#202020] lg:min-w-[85vw] xl:min-w-[65vw] 2xl:min-w-[35vw]"
+        className="create-post-dialog min-w-[100vw] overflow-visible rounded-lg bg-[#202020] lg:min-w-[85vw] xl:min-w-[65vw] 2xl:min-w-[35vw]"
       >
         <button
           aria-label="closebutton"

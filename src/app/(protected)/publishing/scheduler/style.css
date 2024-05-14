@@ -289,7 +289,11 @@
   }
 }
 
-.connect-channel-dialog[open] {
+.create-post-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.create-post-dialog[open] {
   animation: unfoldIn 0.5s;
 }
 
@@ -304,7 +308,7 @@
   }
 }
 
-.connect-channel-dialog.is-hidden {
+.create-post-dialog.is-hidden {
   transform: scaleY(1) scaleX(1);
   animation: closeDialog 0.5s;
 }

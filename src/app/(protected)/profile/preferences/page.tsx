@@ -10,7 +10,7 @@ import Select from "@/components/SelectOption/page";
 import DatePicker from "react-datepicker";
 
 // css
-import "react-datepicker/dist/react-datepicker.css";
+// import "react-datepicker/dist/react-datepicker.css";
 
 export default function ProfilePreferences() {
   const [sidebarStatus, setSidebarStatus] = useState(true);

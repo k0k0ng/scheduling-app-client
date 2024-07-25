@@ -2,13 +2,16 @@
   "name": "scheduling-client",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://k0k0ng.github.io/scheduling-app",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -17,7 +20,7 @@
     "@mui/material": "^5.14.14",
     "next": "13.5.4",
     "react": "^18",
-    "react-datepicker": "^4.21.0",
+    "react-datepicker": "^7.3.0",
     "react-dom": "^18",
     "sharp": "^0.32.6"
   },
@@ -40,6 +43,7 @@
     "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.33.2",
+    "gh-pages": "^6.1.1",
     "husky": "^8.0.0",
     "postcss": "^8",
     "postcss-cli": "^10.1.0",

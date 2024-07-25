@@ -1,0 +1,109 @@
+.top-card-button-bg {
+  opacity: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url("/dashboard/bg/dashboard-menu-bg.png");
+  transition: opacity 0.3s;
+}
+
+.top-card-button:hover .top-card-button-bg {
+  opacity: 1;
+}
+
+/* *** Task Board Panel *** */
+
+.task-board-card.To-do {
+  border-left: 12px solid #deb83beb;
+}
+.view-task.To-do,
+.task-board-card.To-do span.To-do {
+  background-color: #deb83beb;
+}
+
+.task-board-card.In-Progress {
+  border-left: 12px solid #6887ff;
+}
+.view-task.In-Progress,
+.task-board-card.In-Progress span.In-Progress {
+  background-color: #6887ff;
+}
+
+.task-board-card.Done {
+  border-left: 12px solid #6cc788;
+}
+.view-task.Done,
+.task-board-card.Done span.Done {
+  background-color: #6cc788;
+}
+
+.create-note-input {
+  color: #c0c0c0;
+  font-size: 14px;
+  background-color: transparent;
+  border: 1px solid #f1f1f1;
+  outline: none;
+  transition: border 0.3s;
+}
+.create-note-input:hover,
+.create-note-input:focus {
+  border: 1px solid #7b46de;
+}
+
+.create-note-dialog[open] {
+  animation: unfoldIn 0.5s;
+}
+
+@keyframes unfoldIn {
+  0% {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.create-note-dialog.is-hidden {
+  transform: scaleY(1) scaleX(1);
+  animation: closeDialog 0.5s;
+}
+
+@keyframes closeDialog {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+}
+
+.select-note-status-dialog[open] {
+  animation: unfoldInSelectNoteStatus 0.3s;
+  height: 8.5rem;
+}
+
+@keyframes unfoldInSelectNoteStatus {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 8.5rem;
+  }
+}
+
+.select-note-status-dialog.is-hidden {
+  animation: foldInSelectNoteStatus 0.3s;
+}
+
+@keyframes foldInSelectNoteStatus {
+  0% {
+    height: 8.5rem;
+  }
+  100% {
+    height: 0%;
+  }
+}

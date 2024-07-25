@@ -2,18 +2,27 @@
   "name": "scheduling-client",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://k0k0ng.github.io/scheduling-app",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.14",
+    "@mui/material": "^5.14.14",
     "next": "13.5.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-datepicker": "^7.3.0",
+    "react-dom": "^18",
+    "sharp": "^0.32.6"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -22,6 +31,7 @@
     "@typescript-eslint/eslint-plugin": "^6.8.0",
     "@typescript-eslint/parser": "^6.8.0",
     "autoprefixer": "^10",
+    "cssnano": "^6.0.1",
     "eslint": "^8.51.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.1.0",
@@ -33,11 +43,14 @@
     "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.33.2",
+    "gh-pages": "^6.1.1",
+    "husky": "^8.0.0",
     "postcss": "^8",
+    "postcss-cli": "^10.1.0",
+    "postcss-preset-env": "^9.2.0",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.6",
     "tailwindcss": "^3",
-    "typescript": "^5.2.2",
-    "husky": "^8.0.0"
+    "typescript": "^5.2.2"
   }
 }

@@ -1,0 +1,38 @@
+.connect-channel-dialog[open] {
+  animation: unfoldIn 0.5s;
+}
+
+@keyframes unfoldIn {
+  0% {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.connect-channel-dialog.is-hidden {
+  transform: scaleY(1) scaleX(1);
+  animation: closeDialog 0.5s;
+}
+
+@keyframes closeDialog {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+}
+
+.channel-card-btn:hover > .connect-text {
+  background-color: #7b46de;
+}
+
+.connect-text {
+  transition: background-color 0.3s;
+}
